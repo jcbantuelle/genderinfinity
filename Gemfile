@@ -33,6 +33,7 @@ gem 'pry-byebug'
 
 gem 'rack-zippy'
 
+# ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 

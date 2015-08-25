@@ -33,6 +33,9 @@ gem 'pry-byebug'
 
 gem 'rack-zippy'
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+
 group :production do
   gem 'rails_12factor'
 end

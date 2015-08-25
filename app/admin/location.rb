@@ -1,4 +1,5 @@
 ActiveAdmin.register Location do
+  permit_params :name, :phone, :contact, :address, :notes
 
   action_item :upload_csv do
     link_to 'Upload CSV', upload_csv_admin_locations_path

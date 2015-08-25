@@ -32,6 +32,7 @@ gem 'pry-rails'
 gem 'pry-byebug'
 
 gem 'rack-zippy'
+gem 'geocoder'
 
 # ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'

@@ -1,0 +1,25 @@
+<%= @locations.count %> results found within <%= LocationSearcher::SEARCH_DISTANCE %> miles of <%= params[:zip_code] %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Contact</th>
+      <th>Address</th>
+      <th>Distance</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.name %></td>
+        <td><%= location.phone %></td>
+        <td><%= location.contact %></td>
+        <td><%= location.address %></td>
+        <td><%= location.distance.round(2) %> miles away</td>
+        <td><%= location.notes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -11,14 +11,13 @@ ActiveAdmin.register Location do
   collection_action :import_csv, method: :post do
     if params[:location_csv]
       if LocationImporter.new(params[:location_csv]).import
-        redirect_to collection_path, notice: 'Locations imported successfully!'
+        return redirect_to collection_path, notice: 'Locations imported successfully!'
       else
         flash[:warning] = 'File failed to load'
-        render :upload_csv
       end
     else
       flash[:warning] = 'No file was uploaded'
-      render :upload_csv
     end
+    render :upload_csv
   end
 end

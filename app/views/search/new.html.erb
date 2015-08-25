@@ -1,0 +1,7 @@
+<%= form_tag search_index_path, method: :get do %>
+  <%= label_tag :zip_code %>
+  <%= text_field_tag :zip_code %>
+  <br />
+  <br />
+  <%= submit_tag 'Search For Locations Within 10 miles' %>
+<% end %>

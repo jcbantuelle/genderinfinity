@@ -1,13 +1,12 @@
 class LocationSearcher
 
-  SEARCH_DISTANCE = 2
-
-  def initialize(zip_code)
-    @zip_code = zip_code
+  def initialize(params)
+    @address = params[:address]
+    @search_radius = params[:search_radius]
   end
 
   def search
-    Location.near(@zip_code, SEARCH_DISTANCE).to_a
+    Location.near(@address, @search_radius).to_a
   end
 
 end

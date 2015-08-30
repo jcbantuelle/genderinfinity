@@ -1,4 +1,4 @@
-<%= @locations.count %> results found within <%= LocationSearcher::SEARCH_DISTANCE %> miles of <%= params[:zip_code] %>
+<%= @locations.count %> results found within <%= params[:search_radius] %> miles of <%= params[:address] %>
 <table>
   <thead>
     <tr>

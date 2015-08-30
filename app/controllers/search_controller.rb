@@ -3,7 +3,8 @@ class SearchController < ApplicationController
   def index
     @search_form = SearchForm.new(params[:search_form])
     if @search_form.valid?
-      @locations = LocationSearcher.new(@search_form).search
+      @search = LocationSearcher.new(@search_form)
+      @locations = @search.search
     else
       render 'new'
     end

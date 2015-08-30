@@ -1,5 +1,8 @@
 <%= render 'form' %>
 <%= @locations.count %> results found within <%= @search_form.search_radius %> miles of <%= @search_form.address %>
+
+<div id="map"></div>
+
 <table>
   <thead>
     <tr>
@@ -24,3 +27,24 @@
     <% end %>
   </tbody>
 </table>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+  function initialize() {
+    var mapCanvas = document.getElementById('map');
+    var mapOptions = {
+      center: new google.maps.LatLng(<%= @search.address_coordinates.first %>, <%= @search.address_coordinates.last %>),
+      zoom: 12,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    <% @locations.each do |location| %>
+      new google.maps.Marker({
+        position: {lat: <%= location.latitude %>, lng: <%= location.longitude %>},
+        map: map,
+        title: '<%= location.name %>'
+      });
+    <% end %>
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

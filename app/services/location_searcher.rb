@@ -1,8 +1,8 @@
 class LocationSearcher
 
-  def initialize(params)
-    @address = params[:address]
-    @search_radius = params[:search_radius]
+  def initialize(search_form)
+    @address = search_form.address
+    @search_radius = search_form.search_radius
   end
 
   def search

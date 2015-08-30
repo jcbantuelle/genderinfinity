@@ -1,4 +1,5 @@
-<%= @locations.count %> results found within <%= params[:search_radius] %> miles of <%= params[:address] %>
+<%= render 'form' %>
+<%= @locations.count %> results found within <%= @search_form.search_radius %> miles of <%= @search_form.address %>
 <table>
   <thead>
     <tr>

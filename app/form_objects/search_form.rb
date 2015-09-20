@@ -10,7 +10,16 @@ class SearchForm
   def initialize(params)
     @address = params[:address]
     @search_radius = params[:search_radius]
-    @specialties = params[:specialties].reject(&:empty?).map(&:to_i)
+    @specialties = formatted_specialties(params[:specialties])
   end
 
+  private
+
+  def formatted_specialties(specialties)
+    if specialties.nil?
+      []
+    else
+      specialties.reject(&:empty?).map(&:to_i)
+    end
+  end
 end

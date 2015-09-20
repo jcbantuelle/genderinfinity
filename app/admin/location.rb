@@ -5,7 +5,7 @@ ActiveAdmin.register Location do
     selectable_column
     column :name
     column "Specialties" do |location|
-      location.specialties.map(&:name).join(', ')
+      location.specialty_names.join(', ')
     end
     column :phone
     column :contact
@@ -32,7 +32,7 @@ ActiveAdmin.register Location do
     attributes_table do
       row(:name)
       row(:specialties) do |location|
-        location.specialties.map(&:name).join(', ')
+        location.specialty_names.join(', ')
       end
       row(:phone)
       row(:contact)

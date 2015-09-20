@@ -7,6 +7,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Specialties</th>
       <th>Phone</th>
       <th>Contact</th>
       <th>Address</th>
@@ -18,6 +19,7 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.name %></td>
+        <td><%= location.specialty_names.join(', ') %></td>
         <td><%= location.phone %></td>
         <td><%= location.contact %></td>
         <td><%= location.address %></td>

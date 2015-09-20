@@ -13,6 +13,9 @@
   <%= f.label :search_radius, 'Search Radius in Miles' %>
   <%= f.text_field :search_radius %>
   <br />
+  <%= f.label :specialties, 'Filter By Specialty' %>
+  <%= f.collection_check_boxes(:specialties, @specialties, :id, :name) %>
+  <br />
   <br />
   <%= submit_tag 'Search For Locations' %>
 <% end %>

@@ -38,6 +38,11 @@ gem 'geocoder'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+# Twitter Bootstrap
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
 group :production do
   gem 'rails_12factor'
 end

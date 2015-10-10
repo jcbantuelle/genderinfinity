@@ -1,9 +1,12 @@
 <%= render 'form' %>
-<%= @locations.count %> results found within <%= @search_form.search_radius %> miles of <%= @search_form.address %>
 
-<div id="map"></div>
+<h3><%= @locations.count %> results found within <%= @search_form.search_radius %> miles of <%= @search_form.address %></h3>
 
-<table>
+<div id="map" class="col-sm-offset-1"></div>
+
+<br />
+
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>

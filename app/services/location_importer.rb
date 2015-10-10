@@ -43,11 +43,9 @@ class LocationImporter
   end
 
   def location_hash(location)
-    Hash[
-      CSV_COLUMNS.map { |field, column|
-        [field, location[column]]
-      }
-    ]
+    CSV_COLUMNS.map { |field, column|
+      [field, location[column]]
+    }.to_h
   end
 
   def location_specialties(location_specialties)
@@ -61,17 +59,15 @@ class LocationImporter
   end
 
   def find_specialty(name)
-    @specialties.find(create_missing_specialty(name)) { |specialty|
+    @specialties.find { |specialty|
       specialty.name == name
-    }
+    } || create_missing_specialty(name)
   end
 
   def create_missing_specialty(missing_specialty)
-    -> {
-      new_specialty = Specialty.create(name: missing_specialty)
-      @specialties << new_specialty
-      new_specialty
-    }
+    new_specialty = Specialty.create(name: missing_specialty)
+    @specialties << new_specialty
+    new_specialty
   end
 
 end

@@ -33,6 +33,10 @@
           <% end %>
         <% end %>
       <% end %>
+      <%= f.label :confirmed_by_gi, class: 'checkbox-inline col-sm-2' do %>
+        <%= f.check_box :confirmed_by_gi %>
+        <%= :confirmed_by_gi.to_s.humanize %>
+      <% end %>
     </div>
   </div>
   <div>

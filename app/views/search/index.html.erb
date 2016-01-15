@@ -27,7 +27,7 @@
         <td><%= location.contact %></td>
         <td><%= location.address %></td>
         <td><%= location.distance.round(2) %> miles away</td>
-        <td><%= location.notes %></td>
+        <td><%= auto_link(location.notes) %></td>
       </tr>
     <% end %>
   </tbody>

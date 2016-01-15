@@ -57,7 +57,6 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
-    autolink (3.0.0)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -183,6 +182,8 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     railties (4.2.3)
@@ -269,7 +270,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
-  autolink
   better_errors
   binding_of_caller
   coffee-rails (~> 4.1.0)
@@ -285,6 +285,7 @@ DEPENDENCIES
   rack-zippy
   rails (= 4.2.3)
   rails_12factor
+  rails_autolink
   rspec
   rspec-rails
   sass-rails (~> 5.0)

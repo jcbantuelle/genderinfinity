@@ -24,7 +24,7 @@
         <td><%= location.name %></td>
         <td><%= location.specialty_names.join(', ') %></td>
         <td><%= location.phone %></td>
-        <td><%= location.contact %></td>
+        <td><%= auto_link(location.contact) %></td>
         <td><%= location.address %></td>
         <td><%= location.distance.round(2) %> miles away</td>
         <td><%= auto_link(location.notes) %></td>

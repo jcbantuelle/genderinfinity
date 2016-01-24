@@ -4,7 +4,7 @@ class Location < ActiveRecord::Base
   validates :name, presence: true
   validates :address, presence: true
 
-  scope :confirmed_by_gi, ->(confirmed_by_gi) { where(confirmed_by_gi: confirmed_by_gi) }
+  scope :confirmed_by_gi, -> { where(confirmed_by_gi: true) }
 
   geocoded_by :address
   after_validation :geocode, if: ->(location) { location.address.present? and location.address_changed? }

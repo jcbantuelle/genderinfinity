@@ -2,7 +2,7 @@ class SearchForm
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :address, :search_radius, :specialties
+  attr_accessor :address, :search_radius, :specialties, :confirmed_by_gi
 
   validates :address, presence: true
   validates :search_radius, numericality: { only_integer: true }
@@ -11,6 +11,7 @@ class SearchForm
     @address = params[:address]
     @search_radius = params[:search_radius]
     @specialties = formatted_specialties(params[:specialties])
+    @confirmed_by_gi = params[:confirmed_by_gi]
   end
 
   private

@@ -1,0 +1,149 @@
+// --------------------------------------------------------------------------
+// Mixins
+// --------------------------------------------------------------------------
+
+// Borders
+// --------------------------------------------------
+
+@mixin double-border-left ($border-color) {
+    border-left: 1px solid $border-color;
+}
+
+@mixin double-border-right ($border-color) {
+    border-right: 1px solid $border-color;
+}
+
+// Transition
+// --------------------------------------------------
+// With autoprefixer, we no longer need a mixin to output vendor
+// prefixed transition property:values. Visit http://css3generator.com
+// and use the unprefixed version.
+
+
+// Text Shadow
+// --------------------------------------------------
+@mixin text-shadow ($color) {
+    text-shadow: 0 1px 2px $color;
+}
+
+// Flexbox
+// --------------------------------------------------
+@mixin simple-flexbox() {
+  display:                    flex;
+}
+
+@mixin simple-flex-vertical() {
+  flex-direction:             column;
+  box-orient:                 vertical;
+}
+
+@mixin simple-flex-horizontal() {
+  flex-direction:             row;
+  box-orient:                 horizontal;
+}
+
+@mixin simple-order($val) {
+  -webkit-box-ordinal-group:  $val;
+  -moz-box-ordinal-group:     $val;
+  order:                      $val;
+  position: relative;
+}
+
+// Elise's Box Sizing Includes
+// --------------------------------------------------
+// Default Model:               @include box-sizing(border-box);
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+// Elise's Fluidize Mixin
+// --------------------------------------------------
+// Formula to get percentages based on a pixel width at a fixed size:
+// Box's Width at say 1000px Divided By Parent (1000px):  width: fluidize(250px, 1000px);
+// Fluidize Mixin
+@function fluidize($target, $context) {
+    @return ($target / $context) * 100%;
+}
+
+
+// Elise's Quick and Easy "Display: Table" Columns for Vertical Alignment
+// --------------------------------------------------
+
+// This is handy for when you need to make a grid that
+// is based on .row, but needs to have the text or
+// content verticaly aligned in the center of a div
+
+.rowTable {
+    display: table;
+}
+.displayTable {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+// Elise's Container / Wrapper Placeholder
+// --------------------------------------------------
+// This placeholder's good for when you have a lot of
+// wrappers that share the same styles.
+
+// Include
+  // @extend %wrapper;
+  // @extend %container;
+
+// Placehodler Container - Can be set to different widths.
+%wrapper {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+%container {
+    width: 90%;
+    max-width:  $lgScreen;
+    margin: 0 auto;
+}
+
+
+// Fixing Font Loading Cycles
+// --------------------------------------------------
+%font-loading {
+    .wf-loading & {
+        visibility: hidden;
+    }
+}
+
+%font-inactive {
+    .wf-inactive & {
+        visibility: visible;
+    }
+}
+
+%font-active {
+    .wf-active & {
+    visibility: visible;
+    }
+}
+
+// Pointbreak
+// --------------------------------------------------
+// Pointbreak - An FBI agent goes undercover to catch a gang of bank robbers who may be surfers.
+// aka simplier media queries with automatic IE8 fallback
+// Settings:
+// $breakpoint - your media query breakpoint
+// $oldie - set to anything but 'yup' to cancel the fallback class
+// $queryPrefix - defaulted to 'min' for 'min-width' change to 'max' for 'max-width'
+@mixin pointbreak($breakpoint, $oldIE: yup, $queryPrefix: min) {
+    @media only screen and (#{$queryPrefix}-#{width}: $breakpoint) {
+        @content;
+    }
+    @if $oldIE == yup {
+        .lt-ie9 & {
+            @content;
+        }
+    }
+}

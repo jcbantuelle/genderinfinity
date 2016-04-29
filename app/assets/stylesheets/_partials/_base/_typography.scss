@@ -23,9 +23,9 @@
 // -------------------------
 $breakpoints: (
     // "null" is the equivalent of mobile first/smScreen
-    small: $smScreen,           // 650px
-    medium: $mdScreen,          // 990px
-    large: $lgScreen            // 1200px
+    small: $s-screen,           // 650px
+    medium: $m-screen,          // 990px
+    large: $l-screen            // 1200px
 );
 
 // Base Font Size
@@ -142,14 +142,19 @@ h1, h2, h3, h4, h5, h6 { }
 
 // Individual Headings
 h1 {
-    //@include font-size($h1-font-size);
-    font-family: $baseFontFamily;
     color: $primaryColor;
+    font-family: $displayFontFamily;
+    font-feature-settings: "kern";
+    font-size: 3.125em;
+    font-size: 3.125rem;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
 }
 h2 {
     //@include font-size($h2-font-size);
     font-family: $baseFontFamily;
-    color: $secondaryColor;
+    color: white;
+    font-weight: 300;
 }
 h3 {
     //@include font-size($h3-font-size);

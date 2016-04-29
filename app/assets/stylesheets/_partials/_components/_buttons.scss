@@ -2,36 +2,41 @@
 // Button Styles
 // --------------------------------------------------------------------------
 
+.button-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
 // Buttons Placeholder
 // --------------------------------------------------
-  %button {
-    width: auto;
-//    border-radius: $baseBorderRadius;
+%button {
+    border: $border;
     display: inline-block;
-    position: relative;
-    padding: 5px 15px;
-    text-decoration: none;
-    text-align: center;
-    line-height: $baseLineHeight;
-    font-family: $baseFontFamily;
+    font-family: $displayFontFamily;
     font-size: $baseFontSize;
     font-weight: normal;
+    line-height: $baseLineHeight;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+
     @media (max-width: 700px) {
-      width: 100%;
-      display: block;
-      margin: 0 0 5px 0;
+        width: 100%;
+        display: block;
+        margin: 0 0 5px 0;
     }
-  }
+}
 
 // Default Button
 // --------------------------------------------------
 .btn {
   @extend %button;
   color: white;
-  background: $linkColor;
   &:hover, &.hover {
     color: white;
-    background: $linkColorHover;
   }
 }
 

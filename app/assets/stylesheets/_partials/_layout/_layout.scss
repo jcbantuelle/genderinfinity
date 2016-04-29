@@ -1,3 +1,47 @@
 // --------------------------------------------------------------------------
-// Navigation
+// Main Layout
 // --------------------------------------------------------------------------
+
+html { height: 100%; }
+body {
+    @extend %primary-gradient;
+    color: white;
+    font-family: $baseFontFamily;
+    font-size: 1.125rem; // 16px
+    font-weight: 300;
+    margin: 0;
+    width: 100%;
+
+    &:after {
+        @extend %secondary-gradient;
+        content: "";
+        display: block;
+        height: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+// Selection Colors
+// --------------------------------------------------
+
+::selection { background: $primaryColor; } // Webkit
+::-moz-selection { background: $primaryColor; } // Mozilla
+
+
+// Max-Width Wrapper
+// --------------------------------------------------
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+
+    // Large Screen
+    // -------------------------
+    @media only screen and (min-width: $l-screen) {
+        padding: 0;
+    }
+}

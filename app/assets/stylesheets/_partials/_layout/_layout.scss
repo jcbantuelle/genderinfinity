@@ -4,6 +4,7 @@
 
 html { height: 100%; }
 body {
+    @extend %font-loading;
     @extend %primary-gradient;
     color: white;
     font-family: $baseFontFamily;

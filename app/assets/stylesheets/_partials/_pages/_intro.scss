@@ -30,7 +30,7 @@
     [class^="icon-"],
     [class*=" icon-"] {
         animation-name: spinnerRotate;
-        animation-duration: 2s;
+        animation-duration: 0.5s;
         animation-iteration-count: 1;
         animation-timing-function: linear;
         font-size: 2.500em;
@@ -40,13 +40,34 @@
     // Button
     // --------------------------------------------------
     .btn {
+        animation: smooth-fade-in 1s;
         margin-top: $base-cushion;
     }
 }
 
 // Animation
 // --------------------------------------------------
+
+// Icon
+// -------------------------
 @keyframes spinnerRotate {
     from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    to { transform: rotate(180deg); }
+}
+
+// Button
+// -------------------------
+@keyframes smooth-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-0.6em);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-0.6em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

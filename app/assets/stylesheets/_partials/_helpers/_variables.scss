@@ -22,28 +22,33 @@ $black:                     #000000;
 
 // Primary Color
 // -------------------------
-$primaryColor:              #945247; // Mudbug Red
+$primaryColor:              #83E4B5; // Jade Green
 $primaryColorLighten:       lighten($primaryColor, 5%);
 $primaryColorDarken:        darken($primaryColor, 5%);
 $primaryColorTransparent:   rgba($primaryColor, .75);
 
 // Secondary Color
 // -------------------------
-$secondaryColor:            #70B2AC; // Mudbug Blue 
+$secondaryColor:            #3EC8AC; // Teal
 $secondaryColorRGBA:        rgba($secondaryColor, 1);
 $secondaryColorTransparent: rgba($secondaryColor, .75);
 
 // Tertiary Color
 // -------------------------
-$tertiaryColor:             #999; // Mudbug Gray 
+$tertiaryColor:             #4E90A4; // Jeans Blue
 $tertiaryColorRGBA:         rgba($tertiaryColor, 1);
 $tertiaryColorTransparent:  rgba($tertiaryColor, .75);
 
-// Accent Color (Quaternary Color)
+// Quaternary Color
 // -------------------------
-$accentColor:               #A0B72A; // Mudbug Green
-$tertiaryColorRGBA:         rgba($tertiaryColor, 1);
-$tertiaryColorTransparent:  rgba($tertiaryColor, .75);
+$quaternaryColor:           #6E60A0; // Secondary Purple
+$quaternaryColorRGBA:       rgba($quaternaryColor, 1);
+$quaternaryColorTransparent:rgba($quaternaryColor, .75);
+
+// Gradient Colors
+// -------------------------
+$darkGradientColor:         #543F59; // Eggplant Purple
+$neutralGradientColor:      #425568; // Neutral Blue-Grey
 
 
 // Links
@@ -54,10 +59,8 @@ $linkColorHover:            #254C6B; // Mudbug Link Color Hover
 
 // Typography
 // --------------------------------------------------
-$sansFontFamily:            "ff-dagny-web-pro",Helvetica, Arial, sans-serif; // 300 (i), 400 (i), 500 (i), 700 (i)
-$serifFontFamily:           "ff-more-web-pro", Georgia, serif; // 100, 300 (i), 500 (i), 700 (i)
-$baseFontFamily:            $sansFontFamily;
-$altFontFamily:             $serifFontFamily;
+$displayFontFamily:         "ff-karbid-slab-web-pro", Helvetica, Arial, sans-serif; // 300, 400
+$baseFontFamily:            "freight-sans-pro", Helvetica, Arial, sans-serif; // 300, 400 (i), 700
 
 $baseFontSize:              14px;
 $baseLineHeight:            20px;
@@ -67,14 +70,18 @@ $baseSerifFontWeight:       400;
 
 // Scaffolding
 // --------------------------------------------------
-$radius:                    5px;
+$radius:                    4px;
+$border:                    2px solid white;
+$altBorder:                 1px solid $black;
+$base-cushion:              30px; // Padding + Margin Spacing
+$top-cushion:               20vh;
 
 
 //Gridset Variables
 // --------------------------------------------------
-$smScreen: 0px; // the max-width of your small grid (Example: 600px)
-$mdScreen: 0px; // the max-width of your medium grid (Example: 900px)
-$lgScreen: 0px; // the max-width of your large grid
-$lgGutter: 2%;
-$mdGutter: 2%;
-$smGutter: 2%;
+$s-screen: 600px; // the max-width of your small grid (Example: 600px)
+$m-screen: 900px; // the max-width of your medium grid (Example: 900px)
+$l-screen: 1200px; // the max-width of your large grid
+$l-gutter: 2%;
+$m-gutter: 2%;
+$s-gutter: 2%;

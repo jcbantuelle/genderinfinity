@@ -15,15 +15,16 @@
     border: $border;
     display: inline-block;
     font-family: $displayFontFamily;
-    font-size: $baseFontSize;
+    font-size: 1.375rem;
     font-weight: normal;
     line-height: $baseLineHeight;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
+    transition: all 0.4s ease-in;
     width: auto;
 
-    @media (max-width: 700px) {
+    @media (max-width: $s-screen) {
         width: 100%;
         display: block;
         margin: 0 0 5px 0;
@@ -33,15 +34,44 @@
 // Default Button
 // --------------------------------------------------
 .btn {
-  @extend %button;
-  color: white;
-  &:hover, &.hover {
-    color: white;
-  }
+    @extend %button;
+    color: $primaryColor;
+
+    &:hover, &.hover {
+        border-color: $secondaryColor;
+        color: $secondaryColor;
+    }
+
+    &:active, &.active {
+        border-color: $tertiaryColor;
+        color: $tertiaryColor;
+    }
+
+    .pre-hover { display: block; }
+    .post-hover { display: none; animation: fade-in 1.25s; }
+
+    &:hover {
+        .pre-hover { display: none; }
+        .post-hover { display: block; }
+    }
+
+    em {
+        font-size: 1.275rem;
+        font-style: normal;
+        padding-left: 15px;
+        vertical-align: -3px;
+    }
 }
 
 // Alternate Button
 // --------------------------------------------------
 .btnAlt {
-  @extend %button;
+    @extend %button;
+}
+
+// Animation
+// --------------------------------------------------
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }

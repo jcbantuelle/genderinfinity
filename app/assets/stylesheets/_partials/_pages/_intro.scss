@@ -27,14 +27,16 @@
 
     // Icons
     // --------------------------------------------------
-    [class^="icon-"],
-    [class*=" icon-"] {
-        animation-name: spinnerRotate;
-        animation-duration: 0.5s;
-        animation-iteration-count: 1;
-        animation-timing-function: linear;
-        font-size: 2.500em;
-        text-align: center;
+    #logo {
+        [class^="icon-"],
+        [class*=" icon-"] {
+            animation-name: spinnerRotate;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            font-size: 2.500em;
+            text-align: center;
+        }
     }
 
     // Button

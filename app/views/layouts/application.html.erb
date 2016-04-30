@@ -1,39 +1,40 @@
 <!doctype html>
-<!--[if IE 9]>   <html class="ie9">    <![endif]-->
+<!--[if IE 9]>
+    <html class="ie9">
+<![endif]-->
 <html class="no-js" lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resource Finder</title>
-
+    <!-- TypeKit -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'uwa7how',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    <!-- / TypeKit -->
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "application", media: "all" %>
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          </button>
-          <a class="navbar-brand" href="/">Resource Locator</a>
-        </div>
+</head>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <div class="container-fluid">
-      <%= yield %>
+<body>
+    <div id="content">
+        <%= yield %>
     </div>
 
     <footer class="footer">
-      <div class="container">
-        <p class="text-muted"></p>
-      </div>
+        <div class="container">
+            <p class="text-muted"></p>
+        </div>
     </footer>
-  </body>
+</body>
+
 </html>

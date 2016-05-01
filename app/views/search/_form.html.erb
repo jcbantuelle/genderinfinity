@@ -1,23 +1,45 @@
-<div id="intro" class="wrapper">
-    <!-- Logo -->
-    <div id="logo" href="#">
-        <!--<object data="../images/logo.svg" type="image/svg+xml">
-            <img src="../images/logo.png" alt="Gender Infinity">
-        </object> -->
-        <div class="icon-infinity"></div>
-        <h1>Gender Infinity</h1>
-    </div>
+<% if @search_form.errors.count > 0 %>
+  <p>There were errors in your search. Please correct them and try again.</p>
+  <ul>
+    <% @search_form.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-    <!-- Intro Message -->
-    <div class="intro-message">
-        <h2>Your Resource Locator</h2>
-        <p>Find Transgender-Friendly Locations Near You</p>
-        <div class="button-wrap">
-            <a class="btn" href="#">
-                <span class="pre-hover">Welcome</span>
-                <span class="post-hover">Begin<em class="icon-circle-right"></em></span>
-            </a>
-        </div>
+<%= form_for @search_form, {url: search_index_path, method: :get, html: {class: 'form-horizontal'}} do |f| %>
+  <div class="form-group">
+    <%= f.label :address, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :address, class: 'form-control' %>
     </div>
-</div>
-
+  </div>
+  <div class="form-group">
+    <%= f.label :search_radius, 'Search Radius in Miles', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-1">
+      <%= f.text_field :search_radius, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :specialties, 'Filter By Specialty:', class: 'col-sm-2 control-label' %>
+    <br />
+    <div class="checkbox">
+      <% @specialties.in_groups_of(4) do |specialties| %>
+        <div class="col-sm-2"></div>
+        <%= f.collection_check_boxes(:specialties, specialties.compact, :id, :name) do |specialty| %>
+          <%= specialty.label class: 'checkbox-inline col-sm-2' do %>
+            <%= specialty.check_box %>
+            <%= specialty.object.name %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= f.label :confirmed_by_gi, class: 'checkbox-inline col-sm-2' do %>
+        <%= f.check_box :confirmed_by_gi %>
+        <%= :confirmed_by_gi.to_s.humanize %>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <%= submit_tag 'Search For Locations', class: 'btn btn-info' %>
+  <div>
+<% end %>

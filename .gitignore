@@ -22,7 +22,3 @@
 
 /.env
 /.vagrant
-
-# Ignore Codekit dump files
-/app/assets/stylesheets/.sass-cache/
-/app/assets/stylesheets/config.codekit

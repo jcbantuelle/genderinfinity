@@ -11,7 +11,7 @@ class SearchForm
     @address = params[:address]
     @search_radius = params[:search_radius]
     @specialties = formatted_specialties(params[:specialties])
-    @confirmed_by_gi = params[:confirmed_by_gi]
+    @confirmed_by_gi = params[:confirmed_by_gi] == '1'
   end
 
   private

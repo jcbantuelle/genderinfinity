@@ -10,52 +10,77 @@
         text-align: center;
     }
 
-    // Icons
-    // --------------------------------------------------
-    [class^="icon-"],
-    [class*=" icon-"] {
-        //animation-name: spinnerRotate;
-        //animation-duration: 0.5s;
-        //animation-iteration-count: 1;
-        //animation-timing-function: linear;
-        //font-size: 2.500em;
-        //text-align: center;
-    }
-
     // Form
     // --------------------------------------------------
-    .form-group {
-        background: white;
-        margin: -20px 0 50px 0;
-        position: relative;
-        z-index: 100;
-
-        .sticky-wrapper.is-sticky & {
-            margin: $base-cushion 0;
-        }
+    .sticky-wrapper {
+        margin: 0 0 40px 0;
     }
+    .form-group {
+        margin: 0 0 40px 0;
+        position: relative;
+        width: 100%;
+        z-index: 100 !important;
 
-    input {
-        &#location-address {
+        span {
+            display: inline-block;
+            position: relative;
+
+            input {
+                padding-left: 40px;
+                width: 100%;
+
+                &:focus + em[class^="icon-"],
+                &:focus + em[class*=" icon-"] {
+                    color: $tertiaryColor;
+                }
+            }
+
+            em[class^="icon-"],
+            em[class*=" icon-"] {
+                color: $secondaryColor;
+                font-style: normal;
+                position: absolute;
+                left: 15px;
+                top: 35%;
+                z-index: 101;
+            }
+        }
+
+        .location-address {
             width: 60%; //flex
         }
 
-        &#mile-radius {
+        .mile-radius {
             margin-left: -5px;
             width: 19%; //flex
         }
-        &#search {
+        .search {
             margin-left: -5px;
+            width: 21%;
         }
     }
 
-
     // Button
     // --------------------------------------------------
-    .btn {
-        animation: smooth-fade-in 1s;
-        margin-top: $base-cushion;
-        width: 19%; //flex
+    .form-group .btn {
+        background: $quaternaryColor;
+        border: none;
+        color: white;
+        padding: 18px 25px;
+        vertical-align: 1px;
+        width: 100%; //flex
+    }
+
+    // Tags / Filter
+    // --------------------------------------------------
+    .specific-specialty {
+        position: relative;
+
+        h2 {
+            border-bottom: 1px solid white;
+            border-bottom: 1px solid rgba(255,255,255,0.8);
+            padding-bottom: 10px;
+        }
     }
 
     // Map

@@ -156,7 +156,7 @@ h2 {
     font-family: $baseFontFamily;
     color: white;
     font-weight: 300;
-    opacity: 0.7;
+    opacity: 0.8;
 
     &.alt {
         color: $darkGray;
@@ -203,7 +203,7 @@ h6 {
 // -------------------------
 p {
     //@include font-size($base-font-size);
-    opacity: 0.7
+    opacity: 0.8;
 }
 em, i { }
 strong, b { }

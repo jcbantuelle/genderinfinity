@@ -1,0 +1,128 @@
+// --------------------------------------------------------------------------
+// Pages: Search (Modifiers)
+// --------------------------------------------------------------------------
+
+#search-page {
+
+    // Text
+    // --------------------------------------------------
+    h2, p {
+        text-align: center;
+    }
+
+    // Icons
+    // --------------------------------------------------
+    [class^="icon-"],
+    [class*=" icon-"] {
+        //animation-name: spinnerRotate;
+        //animation-duration: 0.5s;
+        //animation-iteration-count: 1;
+        //animation-timing-function: linear;
+        //font-size: 2.500em;
+        //text-align: center;
+    }
+
+    // Form
+    // --------------------------------------------------
+    .form-group {
+        background: white;
+        margin: -20px 0 50px 0;
+        position: relative;
+        z-index: 100;
+
+        .sticky-wrapper.is-sticky & {
+            margin: $base-cushion 0;
+        }
+    }
+
+    input {
+        &#location-address {
+            width: 60%; //flex
+        }
+
+        &#mile-radius {
+            margin-left: -5px;
+            width: 19%; //flex
+        }
+        &#search {
+            margin-left: -5px;
+        }
+    }
+
+
+    // Button
+    // --------------------------------------------------
+    .btn {
+        animation: smooth-fade-in 1s;
+        margin-top: $base-cushion;
+        width: 19%; //flex
+    }
+
+    // Map
+    // --------------------------------------------------
+    address {
+        background: $quaternaryColor;
+        color: white;
+        display: block;
+        font-family: $displayFontFamily;
+        font-style: normal;
+        padding: 15px $base-cushion;
+        text-align: center;
+
+        strong {
+            font-weight: 400;
+        }
+    }
+
+    .location-results {
+        color: $darkGray;
+
+        .wrapper {
+            border-bottom: $border2;
+            padding: 15px $base-cushion;
+
+            span {
+                &:after {
+                    content: "•";
+                    color: $quaternaryColor;
+                    padding: 0 20px;
+                }
+                &:last-child:after {
+                    content: "";
+                    padding: 0;
+                }
+            }
+        }
+
+        .location {
+            font-weight: 400;
+        }
+    }
+}
+
+// Animation
+// --------------------------------------------------
+
+// Icon
+// -------------------------
+@keyframes spinnerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+// Button
+// -------------------------
+@keyframes smooth-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-0.6em);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-0.6em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

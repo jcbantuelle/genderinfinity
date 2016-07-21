@@ -15,7 +15,9 @@ aside { // Only for callouts
     background: white;
     display: block;
     padding: $base-cushion;
+    position: relative;
     width: 100%;
+    z-index: 100;
 }
 
 .secondary-content {

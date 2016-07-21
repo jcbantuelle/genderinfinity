@@ -2,14 +2,41 @@
 // Global Styles
 // --------------------------------------------------------------------------
 
+// Tags
+// --------------------------------------------------
+.general-topic {
+    display: flex;
+    justify-content: center;
+
+    a {
+        background: $secondaryColor;
+        border-radius: $radius;
+        color: white;
+        font-family: $baseFontFamily;
+        margin: 0 2px;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            background: lighten($secondaryColor, 10%);
+        }
+
+        &:active,
+        &.active {
+            background: darken($secondaryColor, 15%);
+        }
+    }
+}
+
 // Images
-// -------------------------
+// --------------------------------------------------
 
 // Horizontal Rule
-// -------------------------
+// --------------------------------------------------
 
 // Utility
-// -------------------------
+// --------------------------------------------------
 .floatRight { float: right;}
 .floatLeft { float: left;}
 .clear { clear: both;}

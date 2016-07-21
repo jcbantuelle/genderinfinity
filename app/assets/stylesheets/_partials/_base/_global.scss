@@ -55,6 +55,13 @@
 // Images
 // --------------------------------------------------
 
+iframe { // Google Maps
+    height: 500px;
+    max-width: 1400px;
+    pointer-events: none;
+    width: 100%;
+}
+
 // Horizontal Rule
 // --------------------------------------------------
 

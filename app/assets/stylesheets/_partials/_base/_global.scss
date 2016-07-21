@@ -2,6 +2,29 @@
 // Global Styles
 // --------------------------------------------------------------------------
 
+
+// Columns
+// --------------------------------------------------
+.column-wrap {
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .column { // 4 columns max
+        align-items: center;
+        display: flex;
+        flex: auto;
+        justify-content: flex-start;
+        padding: 10px $base-cushion;
+
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $s-screen) {
+            flex: 1 1 25%;
+        }
+    }
+}
+
 // Tags
 // --------------------------------------------------
 .general-topic {

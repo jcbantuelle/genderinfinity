@@ -1,4 +1,92 @@
-<% if @search_form.errors.count > 0 %>
+<div id="search-page">
+    <!-- Header for Internal Pages -->
+    <header>
+        <a href="/">Gender Infinity <span class="icon-infinity"></span> Resource Locator</a>
+    </header>
+     <!-- / Header for Internal Pages -->
+
+    <div class="primary-content">
+        <div class="wrapper">
+            <!-- Search Form -->
+            <div class="form-group stick">
+                <input type="text" id="location-address" name="location-address" placeholder="Enter Your Location Address" tabindex="5"/>
+                <input type="text" id="mile-radius" name="mile-radius" placeholder="Enter Mile Radius" tabindex="10"/>
+                <input type="submit" id="search" name="search" class="btn" value="Search" tabindex="15">
+            </div>
+
+            <!-- General Topics -->
+            <h2 class="alt"><span>Services</span></h2>
+            <div class="general-topic">
+                <a href="#" class="active">all</a>
+                <a href="#">educational resources</a>
+                <a href="#">health</a>
+                <a href="#">legal</a>
+                <a href="#">child / youth</a>
+                <a href="#">personal care</a>
+                <a href="#">social support</a>
+                <a href="#">surgery</a>
+                <a href="#">mental health</a>
+            </div>
+
+            <!-- Specific Specialties -->
+            <div class="specific-specialty">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="secondary-content">
+
+        <!-- Google Map -->
+        <div class="wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5958.294408540685!2d-93.62540800000001!3d41.695757799999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee8ff8091294c1%3A0x4c8017c457051f10!2sPetSmart+Ankeny!5e0!3m2!1sen!2sus!4v1464309397487" width="1400" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Results -->
+        <address>
+            5 results found within 100 miles of <strong>1234 Main Street, New Orleans, LA 01234</strong>
+        </address>
+
+        <div class="location-results">
+            <div class="wrapper">
+                <span class="location">Location Name</span>
+                <span class="address">1234 Main Street, New Orleans, LA 01234</span>
+                <span class="phone">123-456-7890</span>
+            </div>
+            <div class="wrapper">
+                <span class="location">Location Name</span>
+                <span class="address">1234 Main Street, New Orleans, LA 01234</span>
+                <span class="phone">123-456-7890</span>
+            </div>
+            <div class="wrapper">
+                <span class="location">Location Name</span>
+                <span class="address">1234 Main Street, New Orleans, LA 01234</span>
+                <span class="phone">123-456-7890</span>
+            </div>
+            <div class="wrapper">
+                <span class="location">Location Name</span>
+                <span class="address">1234 Main Street, New Orleans, LA 01234</span>
+                <span class="phone">123-456-7890</span>
+            </div>
+            <div class="wrapper">
+                <span class="location">Location Name</span>
+                <span class="address">1234 Main Street, New Orleans, LA 01234</span>
+                <span class="phone">123-456-7890</span>
+            </div>
+        </div>
+     </div>
+
+    <!-- Callout -->
+    <aside>
+        <div class="wrapper">
+            <h2>Know of any trans-friendly places?</h2>
+            <p>Gender Infinity is a transgender-supportive community that brings together helpful resources and makes our world a better, safer place.<br /> Help by submitting to our database locations that serve your needs without hate.</p>
+            <a class="btn" href="mailto:">Submit a Location</a>
+        </div>
+    </aside>
+</div>
+
+<!--<% if @search_form.errors.count > 0 %>
   <p>There were errors in your search. Please correct them and try again.</p>
   <ul>
     <% @search_form.errors.full_messages.each do |message| %>
@@ -21,7 +109,7 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :specialties, 'Filter By Specialty:', class: 'col-sm-2 control-label' %>
+<%= f.label :specialties, 'Filter By Specialty:', class: 'col-sm-2 control-label' %>
     <br />
     <div class="checkbox">
       <% @specialties.in_groups_of(4) do |specialties| %>
@@ -40,6 +128,13 @@
     </div>
   </div>
   <div>
+
     <%= submit_tag 'Search For Locations', class: 'btn btn-info' %>
   <div>
-<% end %>
+<% end %>-->
+
+<script>
+    $(window).load(function(){
+      $(".stick").sticky({ topSpacing: 0 });
+    });
+</script>

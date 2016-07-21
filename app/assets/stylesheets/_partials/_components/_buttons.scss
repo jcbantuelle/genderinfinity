@@ -26,7 +26,6 @@
     text-rendering: optimizeLegibility;
     transition: all 0.4s ease-in;
     width: auto;
-
     @media (max-width: $s-screen) {
         width: 100%;
         display: block;
@@ -66,15 +65,70 @@
     }
 }
 
-// Alternate Button
-// --------------------------------------------------
-.btnAlt {
-    @extend %button;
-}
-
 // Animation
 // --------------------------------------------------
 @keyframes fade-in {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// Expand Collapse Button Function
+// --------------------------------------------------
+// Source: http://codepen.io/Yeswanth-JG/pen/bNwYzE
+
+.menu {
+    @include box-shadow-inverted;
+    background-color: $secondaryColor;
+    display: block;
+    padding: $base-cushion;
+    position: relative;
+    width: 100%;
+}
+
+.arrow {
+    @include box-shadow;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    float: left;
+    height: 50px;
+    position: absolute;
+    left: 48.5%;
+    top: -25px;
+    width: 50px;
+    z-index: 100;
+
+    &:focus { outline: none; }
+}
+
+.arrow-hand {
+    background-color: $quaternaryColor;
+    display: inline-block;
+    height: 5px;
+    position: absolute;
+    top: 55%;
+    margin-top: -2px;
+    transition: all 0.4s ease-in-out;
+    width: 20px;
+
+    &.top {
+        left: 10px;
+        transform: rotate(45deg);
+    }
+
+    &.bottom {
+        left: 21px;
+        transform: rotate(-45deg);
+    }
+
+    .arrow.cross & {
+        transition: all 0.4s ease-in-out;
+
+        &.top { transform: rotate(-45deg); }
+        &.bottom { transform: rotate(45deg); }
+    }
 }

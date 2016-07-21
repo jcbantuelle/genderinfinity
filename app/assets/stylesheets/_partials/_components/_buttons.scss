@@ -12,15 +12,18 @@
 // Buttons Placeholder
 // --------------------------------------------------
 %button {
+    @extend %font-loading;
     border: $border;
     display: inline-block;
     font-family: $displayFontFamily;
+    font-feature-settings: "kern";
     font-size: 1.375rem;
     font-weight: normal;
     line-height: $baseLineHeight;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
+    text-rendering: optimizeLegibility;
     transition: all 0.4s ease-in;
     width: auto;
 
@@ -48,7 +51,7 @@
     }
 
     .pre-hover { display: block; }
-    .post-hover { display: none; animation: fade-in 1.25s; }
+    .post-hover { display: none; animation: fade-in 1.65s; }
 
     &:hover {
         .pre-hover { display: none; }
@@ -58,7 +61,7 @@
     em {
         font-size: 1.275rem;
         font-style: normal;
-        padding-left: 15px;
+        padding-left: 14px;
         vertical-align: -3px;
     }
 }

@@ -156,6 +156,33 @@ h2 {
     font-family: $baseFontFamily;
     color: white;
     font-weight: 300;
+    opacity: 0.7;
+
+    &.alt {
+        color: $darkGray;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 20px 0;
+        position: relative;
+
+        span {
+            background: white;
+            padding: 5px 10px;
+            position: relative;
+            z-index: 100;
+        }
+
+        &::after {
+            background: $tertiaryColor;
+            content: "";
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 100%;
+            z-index: 99;
+        }
+    }
 }
 h3 {
     //@include font-size($h3-font-size);
@@ -176,6 +203,7 @@ h6 {
 // -------------------------
 p {
     //@include font-size($base-font-size);
+    opacity: 0.7
 }
 em, i { }
 strong, b { }

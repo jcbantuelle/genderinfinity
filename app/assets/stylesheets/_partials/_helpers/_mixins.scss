@@ -4,12 +4,12 @@
 
 // Base Gradients
 // --------------------------------------------------
-%primary-gradient { // Smooth Transition
+@mixin primary-gradient { // Smooth Transition
     background: $darkGradientColor;
     background: linear-gradient(45deg, $darkGradientColor 0%, $neutralGradientColor 100%);
 }
 
-%secondary-gradient { // Stripes
+@mixin secondary-gradient { // Stripes
     background: repeating-linear-gradient(
         to right,
         $primaryColor,
@@ -20,8 +20,11 @@
     );
 }
 
-// Borders
+// Box Shadow
 // --------------------------------------------------
+@mixin box-shadow {
+    box-shadow: 0 -10px 10px rgba(0,0,0,0.2);
+}
 
 
 // Transition

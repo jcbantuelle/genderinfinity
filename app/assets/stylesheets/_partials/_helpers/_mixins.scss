@@ -23,7 +23,11 @@
 // Box Shadow
 // --------------------------------------------------
 @mixin box-shadow {
-    box-shadow: 0 -10px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+@mixin box-shadow-inverted {
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,0.08);
 }
 
 

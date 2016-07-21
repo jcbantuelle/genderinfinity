@@ -15,8 +15,8 @@
 // Grayscale
 // -------------------------
 $white:                     #FFFFFF;
-$lightGray:                 #BFBFBF;
-$gray:                      #808080;
+$lightGray:                 #EEEEEE;
+$gray:                      #CCCCCC;
 $darkGray:                  #404040;
 $black:                     #000000;
 
@@ -72,7 +72,7 @@ $baseSerifFontWeight:       400;
 // --------------------------------------------------
 $radius:                    4px;
 $border:                    2px solid $primaryColor;
-$altBorder:                 1px solid $black;
+$border2:                   1px solid $gray;
 $base-cushion:              30px; // Padding + Margin Spacing
 $top-cushion:               20vh;
 

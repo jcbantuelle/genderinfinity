@@ -3,7 +3,7 @@
 // --------------------------------------------------------------------------
 
 html {
-    @extend %primary-gradient;
+    @include primary-gradient;
     height: 100%;
 }
 body {
@@ -23,11 +23,11 @@ body {
     width: 100%;
 
     &:after {
-        @extend %secondary-gradient;
+        @include secondary-gradient;
         content: "";
         display: block;
-        height: 15px;
-        position: absolute;
+        height: 5px;
+        position: fixed;
         bottom: 0;
         width: 100%;
     }

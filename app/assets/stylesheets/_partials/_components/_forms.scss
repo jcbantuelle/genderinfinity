@@ -2,20 +2,17 @@
 // Form Styles
 // --------------------------------------------------------------------------
 
-// Primary
+// Labels
 // --------------------------------------------------
-form { }
-fieldset { }
-legend { }
 label {
-    font-family: $displayFontFamily;
+    font-family: $baseFontFamily;
 }
 
 // Inputs
 // --------------------------------------------------
 input[type="text"] {
     background: white;
-    border: $border2;
+    border: 1px solid $secondaryColor;
     color: $black;
     font-family: $baseFontFamily;
     font-size: 1.2em;
@@ -24,14 +21,12 @@ input[type="text"] {
     text-transform: capitalize;
 
     &:focus {
-        border: 1px solid $secondaryColor;
-        color: darken($secondaryColor, 7%);
+        border: 1px solid $tertiaryColor;
+        color: $tertiaryColor;
         outline: none;
     }
 }
-textarea { }
 
-// Other
-// --------------------------------------------------
-select { }
-optgroup { }
+input[type="checkbox"] {
+    margin-right: 7px;
+}

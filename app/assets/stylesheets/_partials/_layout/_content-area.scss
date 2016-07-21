@@ -1,3 +1,23 @@
 // --------------------------------------------------------------------------
-// Sidebar
+// Layout: Content Area
 // --------------------------------------------------------------------------
+
+// Sectionals
+// --------------------------------------------------
+
+aside { // Only for callouts
+    padding: $base-cushion;
+    text-align: center;
+}
+
+.primary-content {
+    @include box-shadow;
+    background: white;
+    display: block;
+    padding: $base-cushion;
+    width: 100%;
+}
+
+.secondary-content {
+    background: $lightGray;
+}

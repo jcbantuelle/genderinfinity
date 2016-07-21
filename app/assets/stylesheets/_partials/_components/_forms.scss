@@ -7,11 +7,28 @@
 form { }
 fieldset { }
 legend { }
-label { }
+label {
+    font-family: $displayFontFamily;
+}
 
 // Inputs
 // --------------------------------------------------
-input { }
+input[type="text"] {
+    background: white;
+    border: $border2;
+    color: $black;
+    font-family: $baseFontFamily;
+    font-size: 1.2em;
+    padding: 0.6em 1em;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+
+    &:focus {
+        border: 1px solid $secondaryColor;
+        color: darken($secondaryColor, 7%);
+        outline: none;
+    }
+}
 textarea { }
 
 // Other

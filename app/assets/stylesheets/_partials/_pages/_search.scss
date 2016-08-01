@@ -12,9 +12,6 @@
 
     // Form
     // --------------------------------------------------
-    .sticky-wrapper {
-        margin: 0 0 40px 0;
-    }
     .form-group {
         margin: 0 0 40px 0;
         position: relative;
@@ -63,12 +60,19 @@
     // Button
     // --------------------------------------------------
     .form-group .btn {
-        background: $quaternaryColor;
+        background: darken($secondaryColor, 15%);
         border: none;
         color: white;
         padding: 18px 25px;
         vertical-align: 1px;
         width: 100%; //flex
+
+        &:hover {
+            background: $secondaryColor;
+        }
+        &:active {
+            background: darken($secondaryColor, 15%);
+        }
     }
 
     // Tags / Filter
@@ -86,7 +90,7 @@
     // Map
     // --------------------------------------------------
     address {
-        background: $quaternaryColor;
+        background: $tertiaryColor;
         color: white;
         display: block;
         font-family: $displayFontFamily;
@@ -101,15 +105,36 @@
 
     .location-results {
         color: $darkGray;
+        counter-reset: location-listing;
 
         .wrapper {
             border-bottom: $border2;
+            counter-increment: location-listing;
+            display: flex;
+            justify-content: center;
             padding: 15px $base-cushion;
+
+            &:before {
+                border: 3px solid $tertiaryColor;
+                border-radius: 50%;
+                color: $tertiaryColor;
+                content: counter(location-listing);
+                height: 35px;
+                line-height: 23px;
+                font-weight: 400;
+                margin: 0 20px 0 0;
+                text-align: center;
+                width: 35px;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
 
             span {
                 &:after {
                     content: "•";
-                    color: $quaternaryColor;
+                    color: $tertiaryColor;
                     padding: 0 20px;
                 }
                 &:last-child:after {
@@ -121,6 +146,8 @@
 
         .location {
             font-weight: 400;
+            font-size: 22px;
+            position: relative;
         }
     }
 }

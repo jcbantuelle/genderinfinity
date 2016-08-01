@@ -6,8 +6,17 @@
 // --------------------------------------------------
 
 aside { // Only for callouts
-    padding: $base-cushion;
+    @include plaid-background;
+    padding: 60px $base-cushion;
     text-align: center;
+
+    h1, h2 {
+        margin-top: 0;
+    }
+
+    .btn {
+        margin-top: 30px;
+    }
 }
 
 .primary-content {
@@ -21,5 +30,5 @@ aside { // Only for callouts
 }
 
 .secondary-content {
-    background: $lightGray;
+    background: white;
 }

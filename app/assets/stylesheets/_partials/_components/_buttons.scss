@@ -49,6 +49,10 @@
         color: $tertiaryColor;
     }
 
+    &:focus {
+        outline: none;
+    }
+
     .pre-hover { display: block; }
     .post-hover { display: none; animation: fade-in 1.65s; }
 
@@ -106,7 +110,7 @@
 }
 
 .arrow-hand {
-    background-color: $quaternaryColor;
+    background-color: darken($secondaryColor, 15%);
     display: inline-block;
     height: 5px;
     position: absolute;

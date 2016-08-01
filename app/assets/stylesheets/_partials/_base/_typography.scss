@@ -211,10 +211,10 @@ sub { }
 sup { }
 
 // Links
-a { 
-  color: $linkColor;
-  &:hover { color: $linkColorHover;}
-  &:active { }
+a {
+  color: $tertiaryColor;
+  &:hover { color: $quaternaryColor; }
+  &:active { color: $secondaryColor; }
 }
 
 // Blockquote
@@ -240,12 +240,3 @@ ul {
 ol {
   li { }
 }
-
-// Definition Lists
-dl { }
-dt { }
-dd { }
-
-// Code Snippets
-code { }
-pre { }

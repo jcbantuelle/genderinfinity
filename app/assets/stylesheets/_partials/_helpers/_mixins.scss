@@ -20,6 +20,18 @@
     );
 }
 
+
+// Background Patterns
+// --------------------------------------------------
+@mixin plaid-background { // plaid
+    background: url(/diagonals.svg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 // Box Shadow
 // --------------------------------------------------
 @mixin box-shadow {

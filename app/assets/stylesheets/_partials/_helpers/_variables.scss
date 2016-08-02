@@ -1,0 +1,80 @@
+// --------------------------------------------------------------------------
+// Variables
+// --------------------------------------------------------------------------
+
+// Naming Conventions
+// --------------------------------------------------
+
+// Class names:           .class-name
+// Variables:             $camelCase
+
+
+// Colors
+// --------------------------------------------------
+
+// Grayscale
+// -------------------------
+$white:                     #FFFFFF;
+$lightGray:                 #BFBFBF;
+$gray:                      #808080;
+$darkGray:                  #404040;
+$black:                     #000000;
+
+// Primary Color
+// -------------------------
+$primaryColor:              #945247; // Mudbug Red
+$primaryColorLighten:       lighten($primaryColor, 5%);
+$primaryColorDarken:        darken($primaryColor, 5%);
+$primaryColorTransparent:   rgba($primaryColor, .75);
+
+// Secondary Color
+// -------------------------
+$secondaryColor:            #70B2AC; // Mudbug Blue 
+$secondaryColorRGBA:        rgba($secondaryColor, 1);
+$secondaryColorTransparent: rgba($secondaryColor, .75);
+
+// Tertiary Color
+// -------------------------
+$tertiaryColor:             #999; // Mudbug Gray 
+$tertiaryColorRGBA:         rgba($tertiaryColor, 1);
+$tertiaryColorTransparent:  rgba($tertiaryColor, .75);
+
+// Accent Color (Quaternary Color)
+// -------------------------
+$accentColor:               #A0B72A; // Mudbug Green
+$tertiaryColorRGBA:         rgba($tertiaryColor, 1);
+$tertiaryColorTransparent:  rgba($tertiaryColor, .75);
+
+
+// Links
+// --------------------------------------------------
+$linkColor:                 #904F47; // Mudbug Link Color
+$linkColorHover:            #254C6B; // Mudbug Link Color Hover
+
+
+// Typography
+// --------------------------------------------------
+$sansFontFamily:            "ff-dagny-web-pro",Helvetica, Arial, sans-serif; // 300 (i), 400 (i), 500 (i), 700 (i)
+$serifFontFamily:           "ff-more-web-pro", Georgia, serif; // 100, 300 (i), 500 (i), 700 (i)
+$baseFontFamily:            $sansFontFamily;
+$altFontFamily:             $serifFontFamily;
+
+$baseFontSize:              14px;
+$baseLineHeight:            20px;
+$baseSansFontWeight:        400;
+$baseSerifFontWeight:       400;
+
+
+// Scaffolding
+// --------------------------------------------------
+$radius:                    5px;
+
+
+//Gridset Variables
+// --------------------------------------------------
+$smScreen: 0px; // the max-width of your small grid (Example: 600px)
+$mdScreen: 0px; // the max-width of your medium grid (Example: 900px)
+$lgScreen: 0px; // the max-width of your large grid
+$lgGutter: 2%;
+$mdGutter: 2%;
+$smGutter: 2%;

@@ -1,0 +1,2 @@
+POSTGRES_PASSWORD=docker
+POSTGRES_USER=gender_infinity_development

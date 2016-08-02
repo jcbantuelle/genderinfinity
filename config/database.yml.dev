@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  host: postgres
+  encoding: unicode
+  database: gender_infinity_development
+  pool: 5
+  username: gender_infinity_development
+  password: docker

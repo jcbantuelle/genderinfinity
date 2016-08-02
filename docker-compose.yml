@@ -1,0 +1,40 @@
+version: '2'
+services:
+    ruby:
+        build:
+            context: .
+            dockerfile: docker/ruby/Dockerfile
+        ports:
+            - 3000:3000
+        volumes_from:
+            - app
+        depends_on:
+            - postgres
+        container_name: ruby
+
+    app:
+        image: ruby:2.3.1
+        volumes:
+            - .:/app
+        command: "true"
+
+    postgres:
+        image: postgres:9.5.3
+        ports:
+            - 5432:5432
+        volumes_from:
+            - data
+        env_file: ./docker/postgres/config
+
+    data:
+        image: postgres:9.5.3
+        volumes:
+            - /var/lib/postgresql/data
+        command: "true"
+
+    mailcatcher:
+        image: zolweb/docker-mailcatcher
+        ports:
+            - 1080:1080
+        expose:
+            - 1025

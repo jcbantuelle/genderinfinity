@@ -12,7 +12,8 @@ class LocationSearcher
   def search
     locations = Location.near(@address_coordinates, @search_radius)
     locations = locations.confirmed_by_gi if @confirmed_by_gi
-    locations = filter_by_specialties(locations.to_a) unless @specialties.empty?
+    locations = locations.to_a
+    locations = filter_by_specialties(locations) unless @specialties.empty?
     locations
   end
 

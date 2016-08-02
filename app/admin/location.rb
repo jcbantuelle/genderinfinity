@@ -1,5 +1,5 @@
 ActiveAdmin.register Location do
-  permit_params :name, :phone, :contact, :address, :notes, specialty_ids: []
+  permit_params :name, :phone, :contact, :address, :notes, :confirmed_by_gi, specialty_ids: []
 
   index do
     selectable_column
@@ -23,6 +23,7 @@ ActiveAdmin.register Location do
         f.input :address
         f.input :notes
         f.input :specialties, as: :check_boxes, collection: Specialty.all
+        f.input :confirmed_by_gi, as: :boolean, label: 'Confirmed By GI?'
       end
     end
     f.actions
@@ -38,6 +39,7 @@ ActiveAdmin.register Location do
       row(:contact)
       row(:address)
       row(:notes)
+      row(:confirmed_by_gi)
     end
   end
 

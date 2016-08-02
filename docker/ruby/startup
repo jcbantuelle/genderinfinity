@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd /app
+
+# Add Environment Variables
+cp config/database.yml.dev config/database.yml
+
+cp docker/ruby/Gemfile* .
+
+# Perform DB migrations
+rake db:create
+rake db:schema:load
+
+# Rails server
+bundle exec rails s -p 3000 -b '0.0.0.0'

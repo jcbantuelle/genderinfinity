@@ -9,7 +9,8 @@ cp docker/ruby/Gemfile* .
 
 # Perform DB migrations
 rake db:create
-rake db:schema:load
+PGPASSWORD=docker pg_restore --verbose --clean --no-acl --no-owner -h postgres -U gender_infinity_development -d gender_infinity_development db/seeds.dump
+rake db:migrate
 
 # Rails server
 bundle exec rails s -p 3000 -b '0.0.0.0'

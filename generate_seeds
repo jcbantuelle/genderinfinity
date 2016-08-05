@@ -1,0 +1,3 @@
+#!/bin/sh
+
+PGPASSWORD=docker pg_dump -Fc --no-acl --no-owner -h postgres -U gender_infinity_development gender_infinity_development > db/seeds.dump

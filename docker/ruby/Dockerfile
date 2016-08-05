@@ -1,7 +1,7 @@
 FROM ruby:2.3.1
 
 # Install Ubuntu Dependencies
-RUN apt-get update && apt-get install -y libpq-dev nodejs
+RUN apt-get update && apt-get install -y libpq-dev nodejs postgresql
 
 # Install Gem Dependencies
 WORKDIR /tmp

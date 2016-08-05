@@ -1,0 +1,6 @@
+<% @service_specialties.each do |specialty| %>
+  <div class="column">
+    <input type="checkbox" id="search-form-specialties-<%= specialty.id %>" name="search_form[specialties][]" value="<%= specialty.id %>" <%= 'checked="checked"' if @search_form && @search_form.specialties.include?(specialty.id) %> />
+    <label for="search-form-specialties-<%= specialty.id %>"><%= specialty.name %></label>
+  </div>
+<% end %>

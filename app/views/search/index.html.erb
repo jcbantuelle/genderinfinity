@@ -1,55 +1,52 @@
-<%= render 'form' %>
+<div id="search-page">
+  <section class="secondary-content">
 
-<h3><%= @locations.count %> results found within <%= @search_form.search_radius %> miles of <%= @search_form.address %></h3>
+    <!-- Google Map -->
+    <div class="wrapper">
+      <div id="map"></div>
+    </div>
 
-<div id="map" class="col-sm-offset-1"></div>
+    <!-- Results -->
+    <address>
+      <%= @locations.count %> result<%= 's' if @locations.count > 0 %> found within <%= @search_form.search_radius %> miles of <strong><%= @search_form.address %></strong>
+    </address>
 
-<br />
+    <div class="location-results">
+      <% @locations.each do |location| %>
+        <div class="wrapper">
+          <span class="location"><%= location.name %></span>
+          <span class="address"><%= location.address %></span>
+          <% if (location.phone.present?) %>
+            <span class="phone"><a href="tel:<%= location.phone %>"><%= location.phone %></a></span>
+          <% end %>
+          <% if (location.contact.present?) %>
+            <span class="website"><%= auto_link(location.contact) %></span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </section>
 
-<table class="table table-bordered table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Specialties</th>
-      <th>Phone</th>
-      <th>Contact</th>
-      <th>Address</th>
-      <th>Distance</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.name %></td>
-        <td><%= location.specialty_names.join(', ') %></td>
-        <td><%= location.phone %></td>
-        <td><%= auto_link(location.contact) %></td>
-        <td><%= location.address %></td>
-        <td><%= location.distance.round(2) %> miles away</td>
-        <td><%= auto_link(location.notes) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-  function initialize() {
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-      center: new google.maps.LatLng(<%= @search.address_coordinates.first %>, <%= @search.address_coordinates.last %>),
-      zoom: 12,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script>
+    function initialize() {
+      var mapCanvas = document.getElementById('map');
+      var mapOptions = {
+        center: new google.maps.LatLng(<%= @search.address_coordinates.first %>, <%= @search.address_coordinates.last %>),
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      <% @locations.each do |location| %>
+        new google.maps.Marker({
+          position: {lat: <%= location.latitude %>, lng: <%= location.longitude %>},
+          map: map,
+          title: '<%= location.name %>'
+        });
+      <% end %>
     }
-    var map = new google.maps.Map(mapCanvas, mapOptions);
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 
-    <% @locations.each do |location| %>
-      new google.maps.Marker({
-        position: {lat: <%= location.latitude %>, lng: <%= location.longitude %>},
-        map: map,
-        title: '<%= location.name %>'
-      });
-    <% end %>
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+  <%= render 'form' %>
+</div>

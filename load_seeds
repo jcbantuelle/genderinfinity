@@ -1,0 +1,1 @@
+PGPASSWORD=docker pg_restore --verbose --clean --no-acl --no-owner -h postgres -U gender_infinity_development -d gender_infinity_development db/seeds.dump

@@ -4,6 +4,9 @@ class Location < ActiveRecord::Base
   validates :name, presence: true
   validates :address, presence: true
 
+  def self.default_scope
+    includes(:specialties)
+  end
   scope :confirmed_by_gi, -> { where(confirmed_by_gi: true) }
 
   geocoded_by :address
@@ -12,4 +15,9 @@ class Location < ActiveRecord::Base
   def specialty_names
     specialties.map(&:name)
   end
+
+  def service_ids
+    specialties.flat_map(&:services).map(&:id).uniq
+  end
+
 end

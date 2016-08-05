@@ -37,11 +37,11 @@
 
     <!-- Specific Specialties -->
     <section class="specific-specialty">
-        <div class="menu" style="<%= 'display:none;' unless @service_specialties %>">
+        <div class="menu" style="<%= 'display:none;' unless @service %>">
             <div class="wrapper">
-                <h2>Looking for something more specific? Narrow your search within <strong id="specialty-filter-service-name"></strong></h2>
+                <h2>Looking for something more specific? Narrow your search within <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
                 <div id="specialties" class="column-wrap">
-                    <%= render partial: 'specialties' if @service_specialties %>
+                    <%= render partial: 'specialties' if @service %>
                 </div>
             </div>
         </div>

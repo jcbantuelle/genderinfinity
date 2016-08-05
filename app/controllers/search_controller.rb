@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     @specialties = Specialty.all
     @services = Service.all
     @search_form = SearchForm.new(params[:search_form])
-    @service_specialties = Service.find(@search_form.service).specialties if @search_form.service
+    @service = Service.find(@search_form.service) if @search_form.service
     if @search_form.valid?
       @search = LocationSearcher.new(@search_form)
       @locations = @search.search
@@ -20,7 +20,7 @@ class SearchController < ApplicationController
   end
 
   def specialties
-    @service_specialties = Service.find(params[:service_id]).specialties
+    @service = Service.find(params[:service_id])
     render partial: 'specialties'
   end
 end

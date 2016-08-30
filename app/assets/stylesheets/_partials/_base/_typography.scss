@@ -45,9 +45,8 @@ $h1-font-size: (
 );
 
 $h2-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
+    null: (1.125em, 1.2),       // 18px
+    large: (1.500em, 1.4)       // 24px
 );
 
 $h3-font-size: (
@@ -96,6 +95,16 @@ $label-font-size: (
     large: (0.000em, 1.6)       // 00px
 );
 
+$input-font-size: (
+    null: (1.000em, 1.2),       // 16px
+    large: (1.250em, 1.4)       // 20px
+);
+
+$button-font-size: (
+    null: (1.000em, 1.2),       // 16px
+    large: (1.375em, 1.4)       // 22px
+);
+
 // Mixin for Type Targeting Sass Maps
 // -------------------------
 
@@ -138,7 +147,7 @@ $label-font-size: (
 // Headings
 // -------------------------
 // All Headings
-h1, h2, h3, h4, h5, h6 { }
+//h1, h2, h3, h4, h5, h6 { }
 
 // Individual Headings
 h1 {
@@ -152,7 +161,7 @@ h1 {
     text-rendering: optimizeLegibility;
 }
 h2 {
-    //@include font-size($h2-font-size);
+    @include font-size($h2-font-size);
     font-family: $baseFontFamily;
     color: white;
     font-weight: 300;
@@ -184,18 +193,18 @@ h2 {
         }
     }
 }
-h3 {
-    //@include font-size($h3-font-size);
-}
-h4 {
-    //@include font-size($h4-font-size);
-}
-h5 {
-    //@include font-size($h5-font-size);
-}
-h6 {
-    //@include font-size($h6-font-size);
-}
+//h3 {
+//    //@include font-size($h3-font-size);
+//}
+//h4 {
+//    //@include font-size($h4-font-size);
+//}
+//h5 {
+//    //@include font-size($h5-font-size);
+//}
+//h6 {
+//    //@include font-size($h6-font-size);
+//}
 
 
 
@@ -205,10 +214,10 @@ p {
     //@include font-size($base-font-size);
     opacity: 0.8;
 }
-em, i { }
-strong, b { }
-sub { }
-sup { }
+//em, i { }
+//strong, b { }
+//sub { }
+//sup { }
 
 // Links
 a {
@@ -218,25 +227,23 @@ a {
 }
 
 // Blockquote
-blockquote { }
-cite { }
-
-// Address
-address { }
-
-
+//blockquote { }
+//cite { }
+//
+//// Address
+//address { }
 
 // Lists
 // -------------------------
 // All Lists
-dl, ol, ul { }
-
-// Unordered Lists
-ul {
-  li { }
-}
-
-// Ordered Lists
-ol {
-  li { }
-}
+//dl, ol, ul { }
+//
+//// Unordered Lists
+//ul {
+//  li { }
+//}
+//
+//// Ordered Lists
+//ol {
+//  li { }
+//}

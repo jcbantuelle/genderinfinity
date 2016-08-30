@@ -17,9 +17,7 @@
     display: inline-block;
     font-family: $displayFontFamily;
     font-feature-settings: "kern";
-    font-size: 1.375rem;
     font-weight: normal;
-    line-height: $baseLineHeight;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
@@ -36,6 +34,7 @@
 // Default Button
 // --------------------------------------------------
 .btn {
+    @include font-size($button-font-size);
     @extend %button;
     color: $primaryColor;
 

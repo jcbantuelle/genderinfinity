@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src: url('/fonts/icomoon.eot?ll2tuw');
-    src: url('/fonts/icomoon.eot?ll2tuw#iefix') format('embedded-opentype'),
-         url('/fonts/icomoon.ttf?ll2tuw') format('truetype'),
-         url('/fonts/icomoon.woff?ll2tuw') format('woff'),
-         url('/fonts/icomoon.svg?ll2tuw#icomoon') format('svg');
+    src: url('/fonts/icomoon.eot?w8rukv');
+    src: url('/fonts/icomoon.eot?w8rukv#iefix') format('embedded-opentype'),
+         url('/fonts/icomoon.ttf?w8rukv') format('truetype'),
+         url('/fonts/icomoon.woff?w8rukv') format('woff'),
+         url('/fonts/icomoon.svg?w8rukv#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,27 +28,33 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-location-listing:before {
+  content: "\e908";
+}
 .icon-pil:before {
-    content: "\e900";
+  content: "\e900";
 }
 .icon-location:before {
-    content: "\e901";
+  content: "\e901";
 }
 .icon-search:before {
-    content: "\e902";
+  content: "\e902";
 }
 .icon-infinity:before {
-    content: "\e903";
+  content: "\e903";
 }
 .icon-bookmark:before {
-    content: "\e904";
+  content: "\e904";
 }
 .icon-circle-right:before {
-    content: "\e905";
+  content: "\e905";
 }
 .icon-circle-left:before {
-    content: "\e906";
+  content: "\e906";
+}
+.icon-tag:before {
+  content: "\e909";
 }
 .icon-radius:before {
-    content: "\e907";
+  content: "\e907";
 }

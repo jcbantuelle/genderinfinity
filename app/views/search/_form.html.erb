@@ -19,16 +19,13 @@
                     <%= f.text_field :search_radius, placeholder: 'Mile Radius', tabindex: 10 %>
                     <em class="icon-radius"></em>
                 </span>
-                <span class="search">
-                    <%= submit_tag 'Search', class: 'btn', tabindex: 15 %>
-                </span>
             </div>
 
             <!-- General Topics -->
             <h2 class="alt"><span>Choose a Service</span></h2>
             <div id="services" class="general-topic">
                 <% @services.each do |service| %>
-                    <a class="service-link <%= 'active' if service.id.to_s == @search_form.service %>" data-service-value="<%= service.id %>" href="#"><%= service.name %></a>
+                    <span class="service-link <%= 'active' if service.id.to_s == @search_form.service %>" data-service-value="<%= service.id %>" href="#"><%= service.name %></span>
                 <% end %>
                 <%= f.hidden_field :service %>
             </div>
@@ -38,11 +35,18 @@
     <!-- Specific Specialties -->
     <section class="specific-specialty">
         <div class="menu" style="<%= 'display:none;' unless @service %>">
+            <div class="arrow" type="button">
+                <span class="arrow-hand top"></span>
+                <span class="arrow-hand bottom"></span>
+            </div>
             <div class="wrapper">
                 <h2>Looking for something more specific? Narrow your search within <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
                 <div id="specialties" class="column-wrap">
                     <%= render partial: 'specialties' if @service %>
                 </div>
+                <span class="search">
+                    <%= submit_tag 'Search', class: 'btn', tabindex: 15 %>
+                </span>
             </div>
         </div>
     </section>

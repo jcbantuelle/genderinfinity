@@ -3,6 +3,7 @@
 // --------------------------------------------------------------------------
 
 #intro {
+    animation: smooth-fade-in 1s;
     padding-top: $top-cushion;
 
     // Wrapper
@@ -13,27 +14,19 @@
 
     // Text
     // --------------------------------------------------
-    h1, h2, p {
-        text-align: center;
-    }
+    h1, h2, p { text-align: center; }
 
-    h1 {
-        margin-top: 0;
-    }
+    h1, p { margin-top: 0; }
 
-    h2 {
-        margin-bottom: 0;
-    }
+    h2 { margin-bottom: 0; }
 
     // Icons
     // --------------------------------------------------
     #logo {
-        [class^="icon-"],
-        [class*=" icon-"] {
-            animation-name: spinnerRotate;
-            animation-duration: 0.5s;
-            animation-iteration-count: 1;
-            animation-timing-function: linear;
+        margin: auto auto 50px auto;
+        max-width: 400px;
+
+        img {
             font-size: 2.500em;
             text-align: center;
         }
@@ -42,20 +35,18 @@
     // Button
     // --------------------------------------------------
     .btn {
-        animation: smooth-fade-in 1s;
         margin-top: $base-cushion;
+
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $s-screen) {
+            width: 200px;
+        }
     }
 }
 
 // Animation
 // --------------------------------------------------
-
-// Icon
-// -------------------------
-@keyframes spinnerRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(180deg); }
-}
 
 // Button
 // -------------------------

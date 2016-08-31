@@ -14,14 +14,19 @@
     <div class="location-results">
       <% @locations.each do |location| %>
         <div class="wrapper">
-          <span class="location"><%= location.name %></span>
-          <span class="address"><%= location.address %></span>
-          <% if (location.phone.present?) %>
-            <span class="phone"><a href="tel:<%= location.phone %>"><%= location.phone %></a></span>
-          <% end %>
-          <% if (location.contact.present?) %>
-            <span class="website"><%= auto_link(location.contact) %></span>
-          <% end %>
+            <div class="primary-info">
+              <span class="location"><%= location.name %></span>
+              <span class="address"><%= location.address %></span>
+              <% if (location.phone.present?) %>
+                <span class="phone"><a href="tel:<%= location.phone %>"><%= location.phone %></a></span>
+              <% end %>
+              <% if (location.contact.present?) %>
+                <span class="website"><%= auto_link(location.contact) %></span>
+              <% end %>
+            </div>
+            <div class="secondary-info">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id congue mi, ut dapibus mi. Donec consectetur nisi sit amet nulla lobortis, eget porta ante rhoncus. Curabitur in lacus ornare, rutrum velit in, ornare lectus. Nulla condimentum eu leo a iaculis.
+            </div>
         </div>
       <% end %>
     </div>

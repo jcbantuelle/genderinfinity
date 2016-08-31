@@ -25,18 +25,15 @@
 @import "_partials/_layout/_layout";             // HTML / Body
 @import "_partials/_layout/_header";             // Header Layout Partial
 @import "_partials/_layout/_content-area";       // Content Area Layout Partial
-@import "_partials/_layout/_footer";             // Footer Layout Partial
 
 
 // Component Styles
 // -----------------------------------------------
 @import "_partials/_components/_forms";          // Global Form Styles
-@import "_partials/_components/_search";         // Search Bar Styles
 @import "_partials/_components/_buttons";        // All your Buttons
-@import "_partials/_components/_tables";         // All your Tables
 
 
 // Page-Specific Styles
 // -----------------------------------------------
-@import "_partials/_pages/intro";               // Comment
-@import "_partials/_pages/search";              // Comment
+@import "_partials/_pages/intro";               // Welcome Page
+@import "_partials/_pages/search";              // Search Page and Results Styles

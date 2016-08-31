@@ -118,7 +118,8 @@
     // Map
     // --------------------------------------------------
     address {
-        background: $tertiaryColor;
+        background-color: $secondaryColor;
+        border-bottom: 2px solid darken($secondaryColor, 10%);
         color: white;
         display: block;
         font-family: $displayFontFamily;
@@ -132,34 +133,42 @@
     }
 
     .location-results {
+        background: $lightGray;
+        border-bottom: 1px solid $gray;
         color: $darkGray;
 
         .wrapper {
             border-bottom: $border2;
-            display: flex;
-            justify-content: center;
-            padding: 15px $base-cushion;
+            overflow: hidden;
+            padding: 20px 5%;
+            transition: all 0.2s ease-in;
 
             &:last-child {
                 border-bottom: none;
             }
 
-            span {
-                &:after {
-                    content: "•";
-                    color: $tertiaryColor;
-                    padding: 0 20px;
-                }
-                &:last-child:after {
-                    content: "";
-                    padding: 0;
-                }
+            &:hover {
+                background: darken($lightGray, 3%);
             }
+        }
+
+        span {
+            display: block;
+        }
+
+        .primary-info {
+            float: left;
+            width: 40%;
+        }
+
+        .secondary-info {
+            float: left;
+            width: 60%;
         }
 
         .location {
             font-weight: 400;
-            font-size: 22px;
+            font-size: 24px;
             position: relative;
         }
     }

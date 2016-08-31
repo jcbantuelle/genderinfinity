@@ -13,7 +13,7 @@ label {
 input[type="text"] {
     @include font-size($input-font-size);
     background: white;
-    border: 1px solid $secondaryColor;
+    border: 2px solid $secondaryColor;
     color: $black;
     font-family: $baseFontFamily;
     padding: 0.6em 1em;

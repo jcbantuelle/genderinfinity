@@ -40,7 +40,7 @@
                 <span class="arrow-hand bottom"></span>
             </div>
             <div class="wrapper">
-                <h2>Looking for something more specific? Narrow your search within <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
+                <h2>Find a specialty for <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
                 <div id="specialties" class="column-wrap">
                     <%= render partial: 'specialties' if @service %>
                 </div>

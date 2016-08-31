@@ -60,6 +60,14 @@
         // Large Screen
         // -------------------------
         @media only screen and (min-width: $s-screen) {
+            .mile-radius input {
+                border-left-width: 1px;
+            }
+        }
+
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $s-screen) {
             .location-address {
                 width: 75%;
             }

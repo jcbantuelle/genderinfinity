@@ -15,7 +15,7 @@
       <% @locations.each do |location| %>
         <div class="wrapper">
           <div class="primary-info">
-            <span class="location"><%= location.name %></span>
+            <span class="location"><h3><%= location.name %></h3></span>
             <ul>
                 <li class="address"><%= location.address %></li>
                 <li class="distance"><%= location.distance.round(2) %> Miles Away</li>

@@ -37,40 +37,16 @@ $base-font-size: (              // html, body, p
 
 // Heading Font Sizes
 // -------------------------
-$h1-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
-);
-
 $h2-font-size: (
     null: (1.125em, 1.2),       // 18px
     large: (1.500em, 1.4)       // 24px
 );
 
 $h3-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
+    null: (1.313em, 1.4),       // 21px
+    large: (1.500em, 1.6)       // 24px
 );
 
-$h4-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
-);
-
-$h5-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
-);
-
-$h6-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
-);
 
 // Icon Font Sizes
 // -------------------------
@@ -197,20 +173,13 @@ h2 {
         }
     }
 }
-//h3 {
-//    //@include font-size($h3-font-size);
-//}
-//h4 {
-//    //@include font-size($h4-font-size);
-//}
-//h5 {
-//    //@include font-size($h5-font-size);
-//}
-//h6 {
-//    //@include font-size($h6-font-size);
-//}
 
-
+h3 {
+    color: black;
+    @include font-size($h3-font-size);
+    font-weight: 400;
+    margin: 0 0 20px 0;
+}
 
 // Text Treatments
 // -------------------------

@@ -31,9 +31,8 @@ $breakpoints: (
 // Base Font Size
 // -------------------------
 $base-font-size: (              // html, body, p
-    null: (0.938em, 1.4),       // 14px
-    medium: (1.000em, 1.5),     // 15px
-    large: (1.063em, 1.6)       // 17px
+    null: (0.938rem, 1.4),      // 15px
+    large: (1.125rem, 1.5)      // 16px
 );
 
 // Heading Font Sizes

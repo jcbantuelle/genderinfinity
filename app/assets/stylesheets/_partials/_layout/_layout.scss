@@ -7,16 +7,22 @@ html {
     height: 100%;
 }
 body {
+    @include font-size($base-font-size);
     @extend %font-loading;
     @include plaid-background;
     color: white;
     display: block;
     font-family: $baseFontFamily;
-    font-size: 1.125rem; // 16px
-    font-weight: 300;
+    font-weight: 400;
     height: 100%;
     margin: 0;
     width: 100%;
+
+    // Large Screen
+    // -------------------------
+    @media only screen and (min-width: $l-screen) {
+        font-weight: 300;
+    }
 
     &:after {
         @include secondary-gradient;

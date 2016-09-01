@@ -4,9 +4,14 @@
 
 // Base Gradients
 // --------------------------------------------------
-@mixin primary-gradient { // Smooth Transition
+@mixin primary-gradient-with-pattern { // Smooth Transition
     background: $darkGradientColor;
     background: url(/diagonals.svg), linear-gradient(45deg, $darkGradientColor 0%, $neutralGradientColor 100%);
+}
+
+@mixin primary-gradient { // Smooth Transition
+    background: $darkGradientColor;
+    background: linear-gradient(45deg, $darkGradientColor 0%, $neutralGradientColor 100%);
 }
 
 @mixin secondary-gradient { // Stripes
@@ -33,7 +38,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        @include primary-gradient;
+        @include primary-gradient-with-pattern;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;

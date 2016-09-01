@@ -21,7 +21,7 @@ input[type="text"] {
     text-transform: capitalize;
 
     &:focus {
-        border: 1px solid $tertiaryColor;
+        border-color: $tertiaryColor;
         color: $tertiaryColor;
         outline: none;
     }
@@ -37,7 +37,7 @@ input[type="checkbox"] {
     background: $warning;
     @include box-shadow-inverted;
     color: white;
-    opacity: 0.8;
+    opacity: 0.9;
     padding: 15px 5%;
     position: relative;
     z-index: 999;
@@ -92,8 +92,9 @@ input[type="checkbox"] {
     }
 
     ul {
+        font-size: 15px;
         margin: 0;
-        opacity: 0.8;
+        opacity: 0.9;
         padding: 0 0 0 8%;
     }
 }

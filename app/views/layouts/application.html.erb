@@ -27,16 +27,18 @@
 </head>
 
 <body>
-    <%= render partial: 'headers/internal' unless current_page?(root_url) %>
-    <div id="content">
-        <%= yield %>
-    </div>
-    <%= render partial: 'footers/internal' unless current_page?(root_url) %>
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted"></p>
+    <div class="plaid-wrap">
+        <%= render partial: 'headers/internal' unless current_page?(root_url) %>
+        <div id="content">
+            <%= yield %>
         </div>
-    </footer>
+        <%= render partial: 'footers/internal' unless current_page?(root_url) %>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted"></p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
 // --------------------------------------------------
 @mixin primary-gradient { // Smooth Transition
     background: $darkGradientColor;
-    background: linear-gradient(45deg, $darkGradientColor 0%, $neutralGradientColor 100%);
+    background: url(/diagonals.svg), linear-gradient(45deg, $darkGradientColor 0%, $neutralGradientColor 100%);
 }
 
 @mixin secondary-gradient { // Stripes
@@ -23,12 +23,23 @@
 
 // Background Patterns
 // --------------------------------------------------
-@mixin plaid-background { // plaid
-    background: url(/diagonals.svg);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+.plaid-wrap { // plaid
+    position: relative;
+
+    &:before {
+        content: "";
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        @include primary-gradient;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        //will-change: transform;
+        z-index: -1;
+    }
 }
 
 

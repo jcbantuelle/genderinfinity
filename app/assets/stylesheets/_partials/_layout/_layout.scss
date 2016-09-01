@@ -3,13 +3,11 @@
 // --------------------------------------------------------------------------
 
 html {
-    @include primary-gradient;
     height: 100%;
 }
 body {
     @include font-size($base-font-size);
     @extend %font-loading;
-    @include plaid-background;
     color: white;
     display: block;
     font-family: $baseFontFamily;

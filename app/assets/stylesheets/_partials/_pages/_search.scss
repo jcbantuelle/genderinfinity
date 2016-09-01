@@ -132,6 +132,8 @@
         }
     }
 
+    // Results
+    // --------------------------------------------------
     .location-results {
         background: $lightGray;
         border-bottom: 2px solid $gray;
@@ -152,10 +154,13 @@
             }
         }
 
-        span { display: block; }
+        .tag {
+            display: inline-block;
+            font-weight: 400;
+        }
 
-        .tag { display: inline-block; }
-
+        // Left Column
+        // -------------------------
         .primary-info {
             margin-bottom: 20px;
 
@@ -166,9 +171,71 @@
                 margin-right: 5%;
                 width: 35%;
             }
+
+            ul { padding-left: 0; }
+
+            li {
+                list-style: none;
+                margin-left: 20px;
+                padding-left: 8px;
+                position: relative;
+            }
         }
 
+        .location {
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        // Icons (shared styles)
+        // -------------------------
+        .address, .phone, .website, .distance {
+            margin-bottom: 5px;
+
+            &:before {
+                color: darken($secondaryColor, 10%);
+                font-family: 'icomoon';
+                position: absolute;
+                left: -21px;
+                top: 2px;
+            }
+        }
+
+        // Icons (custom styles)
+        // -------------------------
+        .address:before     { content: "\e901"; }
+        .phone:before       { content: "\e900"; }
+        .website:before     { content: "\e902"; }
+        .distance:before    { content: "\e908"; }
+
+        // Directions Button
+        // -------------------------
+        .directions {
+            margin-top: $base-cushion;
+
+            .btn {
+                @include font-size($secondary-button-font-size);
+                border-color: $quaternaryColor;
+                color: $quaternaryColor;
+                padding: 10px 15px;
+
+                &:hover {
+                    border-color: $tertiaryColor;
+                    color: $tertiaryColor;
+                }
+                &:active {
+                    border-color: $secondaryColor;
+                    color: $secondaryColor;
+                }
+            }
+        }
+
+        // Right Column
+        // -------------------------
         .secondary-info {
+
             // Large Screen
             // -------------------------
             @media only screen and (min-width: $s-screen) {
@@ -183,36 +250,6 @@
                     margin-top: 0;
                 }
             }
-        }
-
-        .location {
-            font-weight: 400;
-            font-size: 24px;
-            margin-bottom: 5px;
-            position: relative;
-        }
-
-        .address, .phone, .website {
-            margin-bottom: 5px;
-
-            &:before {
-                color: darken($secondaryColor, 10%);
-                font-family: 'icomoon';
-                margin-right: 7px;
-                vertical-align: -3px;
-            }
-        }
-
-        .address:before {
-            content: "\e901";
-        }
-
-        .phone:before {
-            content: "\e900";
-        }
-
-        .website:before {
-            content: "\e902";
         }
     }
 }

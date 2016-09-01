@@ -63,13 +63,13 @@
     $('.service-link').click(function() {
         $('.service-link').removeClass('active')
         $(this).addClass('active')
-//        $('.menu').slideUp()
         var service_text = $(this).text()
         var service_id = $(this).attr('data-service-value')
         $('#specialty-filter-service-name').text(service_text)
         $('#search_form_service').val(service_id)
+        $('#specialties').slideUp()
         $.post('/search/specialties', {service_id: service_id}, function(specialties) {
-            $('#specialties').html(specialties)
+            $('#specialties').html(specialties).slideDown()
             $('.menu').slideDown()
         })
     })

@@ -72,8 +72,9 @@
         vertical-align: 5px;
 
         &:after {
-            content: ",";
-            color: black;
+            content: "•";
+            color: $quaternaryColor;
+            margin-left: 10px;
             margin-right: 5px;
         }
 

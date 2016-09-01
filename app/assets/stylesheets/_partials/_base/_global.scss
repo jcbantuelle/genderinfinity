@@ -27,6 +27,9 @@
 
 // Tags
 // --------------------------------------------------
+
+// Search Filter
+// -------------------------
 .general-topic {
 
     // Large Screen
@@ -56,6 +59,32 @@
         &.active {
             background: darken($secondaryColor, 15%);
         }
+    }
+}
+
+// Results
+// -------------------------
+.results-tags {
+    .tag {
+        display: inline-block;
+        font-size: 15px;
+        vertical-align: 5px;
+
+        &:after {
+            content: ",";
+            color: black;
+            margin-right: 5px;
+        }
+
+        &:last-child:after {
+            content: "";
+        }
+    }
+    [class^="icon-"],
+    [class*=" icon-"] {
+        color: darken($secondaryColor, 10%);
+        float: left;
+        margin-right: 10px;
     }
 }
 

@@ -31,7 +31,7 @@
 .plaid-wrap { // plaid
     position: relative;
 
-    &:before {
+    &:before { // this method prevents paint issues and jank
         content: "";
         height: 100%;
         position: fixed;
@@ -42,7 +42,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        //will-change: transform;
+        will-change: transform; // creates a new paint layer
         z-index: -1;
     }
 }

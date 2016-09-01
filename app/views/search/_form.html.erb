@@ -42,9 +42,11 @@
     <!-- Specific Specialties -->
     <section class="specific-specialty">
         <div class="menu" style="<%= 'display:none;' unless @service %>">
-            <div class="arrow" type="button">
-                <span class="arrow-hand top"></span>
-                <span class="arrow-hand bottom"></span>
+            <div class="arrow-wrap">
+                <div class="arrow" type="button">
+                    <span class="arrow-hand top"></span>
+                    <span class="arrow-hand bottom"></span>
+                </div>
             </div>
             <div class="wrapper">
                 <h2>Find a specialty for <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>

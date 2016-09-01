@@ -88,8 +88,12 @@
     background-color: $secondaryColor;
     display: block;
     padding: $base-cushion;
-    position: relative;
     width: 100%;
+}
+
+.arrow-wrap {
+    display: block;
+    position: relative;
 }
 
 .arrow {
@@ -99,9 +103,12 @@
     border-radius: 50%;
     float: left;
     height: 50px;
+    margin-left: auto;
+    margin-right: auto;
     position: absolute;
-    left: 48.5%;
-    top: -25px;
+    left: 0;
+    right: 0;
+    top: -55px;
     width: 50px;
     z-index: 100;
 

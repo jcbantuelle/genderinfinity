@@ -157,13 +157,24 @@
         .tag { display: inline-block; }
 
         .primary-info {
-            float: left;
-            width: 40%;
+            margin-bottom: 20px;
+
+            // Large Screen
+            // -------------------------
+            @media only screen and (min-width: $s-screen) {
+                float: left;
+                margin-right: 5%;
+                width: 35%;
+            }
         }
 
         .secondary-info {
-            float: left;
-            width: 60%;
+            // Large Screen
+            // -------------------------
+            @media only screen and (min-width: $s-screen) {
+                float: left;
+                width: 60%;
+            }
 
             p {
                 text-align: left;

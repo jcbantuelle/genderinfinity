@@ -101,7 +101,7 @@
                 background: none;
                 border: 2px solid white;
                 color: white;
-                margin-top: $base-cushion;
+                margin-top: 50px;
                 vertical-align: 1px;
 
                 &:hover {
@@ -147,14 +147,14 @@
                 border-bottom: none;
             }
 
-            &:hover {
+            &:nth-child(even) {
                 background: darken($lightGray, 3%);
             }
         }
 
-        span {
-            display: block;
-        }
+        span { display: block; }
+
+        .tag { display: inline-block; }
 
         .primary-info {
             float: left;
@@ -164,12 +164,44 @@
         .secondary-info {
             float: left;
             width: 60%;
+
+            p {
+                text-align: left;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
         }
 
         .location {
             font-weight: 400;
             font-size: 24px;
+            margin-bottom: 5px;
             position: relative;
+        }
+
+        .address, .phone, .website {
+            margin-bottom: 5px;
+
+            &:before {
+                color: darken($secondaryColor, 10%);
+                font-family: 'icomoon';
+                margin-right: 7px;
+                vertical-align: -3px;
+            }
+        }
+
+        .address:before {
+            content: "\e901";
+        }
+
+        .phone:before {
+            content: "\e900";
+        }
+
+        .website:before {
+            content: "\e902";
         }
     }
 }

@@ -81,7 +81,7 @@
         }
     }
     [class^="icon-"],
-    [class*=" icon-"] {
+    [class*=" icon-"] { // tag icon
         color: darken($secondaryColor, 10%);
         float: left;
         margin-right: 10px;

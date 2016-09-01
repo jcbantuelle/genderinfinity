@@ -104,6 +104,11 @@ $button-font-size: (
     large: (1.375em, 1.4)       // 22px
 );
 
+$secondary-button-font-size: (
+    null: (1.000em, 1.2),       // 16px
+    large: (1.125em, 1.4)       // 18px
+);
+
 // Mixin for Type Targeting Sass Maps
 // -------------------------
 

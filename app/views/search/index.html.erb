@@ -14,27 +14,28 @@
     <div class="location-results">
       <% @locations.each do |location| %>
         <div class="wrapper">
-            <div class="primary-info">
-              <span class="location"><%= location.name %></span>
-              <span class="address"><%= location.address %></span>
-              <% if (location.phone.present?) %>
-                <span class="phone"><a href="tel:<%= location.phone %>"><%= location.phone %></a></span>
-              <% end %>
-              <% if (location.contact.present?) %>
-                <span class="website"><%= auto_link(location.contact) %></span>
+          <div class="primary-info">
+            <span class="location"><%= location.name %></span>
+            <span class="address"><%= location.address %></span>
+            <span class="distance"><%= location.distance.round(2) %> Miles Away</span>
+            <span class="directions"><a target="_blank" href="http://www.google.com/maps?saddr=<%= @search_form.address %>&amp;daddr=<%= location.address %>">Directions</a>
+            <% if (location.phone.present?) %>
+              <span class="phone"><a href="tel:<%= location.phone %>"><%= location.phone %></a></span>
+            <% end %>
+            <% if (location.contact.present?) %>
+              <span class="website"><%= auto_link(location.contact) %></span>
+            <% end %>
+          </div>
+          <div class="secondary-info">
+            <p><strong>About:</strong> <%= auto_link(location.notes) %></p>
+            <hr>
+            <div class="results-tags">
+              <span class="icon-tag"></span>
+              <% location.specialties.each do |specialty| %>
+                <span class="tag"><%= specialty.name %></span>
               <% end %>
             </div>
-            <div class="secondary-info">
-                <p><strong>About:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id congue mi, ut dapibus mi. Donec consectetur nisi sit amet nulla lobortis, eget porta ante rhoncus. Curabitur in lacus ornare, rutrum velit in, ornare lectus.</p>
-                <p><strong>Directions:</strong> Sed lorem mauris, tempus tincidunt ornare et, scelerisque sed urna. Donec elit tellus, tincidunt ac auctor id, convallis feugiat orci. Sed rhoncus arcu in diam ornare, ut maximus nulla consequat.</p>
-                <hr>
-                <div class="results-tags">
-                    <span class="icon-tag"></span>
-                    <span class="tag"><a href="#">health</a></span>
-                    <span class="tag"><a href="#">personal care</a></span>
-                    <span class="tag"><a href="#">child/youth</a></span>
-                </div>
-            </div>
+          </div>
         </div>
       <% end %>
     </div>

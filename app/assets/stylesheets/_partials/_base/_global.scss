@@ -6,29 +6,23 @@
 // Columns
 // --------------------------------------------------
 .column-wrap {
-	display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    overflow: hidden;
 
     .column { // 4 columns max
-        align-items: center;
-        display: flex;
-        flex: auto;
-        justify-content: flex-start;
         padding: 10px $base-cushion 0 $base-cushion;
         width: 100%;
 
         // Large Screen
         // -------------------------
-        @media only screen and (min-width: $s-screen) {
-            flex: 1 1 25%;
+        @media only screen and (min-width: $l-screen) {
+            float: left;
             width: 25%;
         }
 
         // Medium Screen
         // -------------------------
-        @media only screen and (min-width: $m-screen) {
-            flex: 1 1 33%;
+        @media only screen and (min-width: $m-screen) and (max-width: $l-screen) {
+            float: left;
             width: 33.3%;
         }
     }

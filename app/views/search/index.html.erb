@@ -8,7 +8,7 @@
 
     <!-- Results -->
     <address>
-      <%= @locations.count %> result<%= 's' if @locations.count > 0 %> found within <%= @search_form.search_radius %> miles of <strong><%= @search_form.address %></strong>
+      <%= @locations.count %> result<%= 's' if @locations.count != 1 %> found within <%= @search_form.search_radius %> miles of <strong><%= @search_form.address %></strong>
     </address>
 
     <div class="location-results">
@@ -29,8 +29,10 @@
             <span class="directions"><a class="btn" target="_blank" href="http://www.google.com/maps?saddr=<%= @search_form.address %>&amp;daddr=<%= location.address %>">Directions<em class="icon-circle-right"></em></a></span>
           </div>
           <div class="secondary-info">
-            <p class="about"><strong>About:</strong> <%= auto_link(location.notes) %></p>
-            <hr>
+            <% if location.notes.present? %>
+              <p class="about"><%= auto_link(location.notes) %></p>
+              <hr>
+            <% end %>
             <div class="results-tags">
               <span class="icon-tag"></span>
               <% location.specialties.each do |specialty| %>

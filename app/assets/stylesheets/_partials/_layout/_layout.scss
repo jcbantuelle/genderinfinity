@@ -16,12 +16,6 @@ body {
     margin: 0;
     width: 100%;
 
-    // Large Screen
-    // -------------------------
-    @media only screen and (min-width: $l-screen) {
-        font-weight: 300;
-    }
-
     &:after {
         @include secondary-gradient;
         content: "";

@@ -15,11 +15,13 @@ input[type="text"] {
     @include font-size($input-font-size);
     background: white;
     border: 2px solid $secondaryColor;
+    border-radius: 0;
     color: $black;
     font-family: $baseFontFamily;
     padding: 0.6em 1em;
     transition: all 0.3s ease;
     text-transform: capitalize;
+    -webkit-appearance: none;
 
     &:focus {
         border-color: $tertiaryColor;

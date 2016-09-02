@@ -14,6 +14,7 @@
 %button {
     @extend %font-loading;
     border: $border;
+    border-radius: 0;
     display: inline-block;
     font-family: $displayFontFamily;
     font-feature-settings: "kern";
@@ -24,6 +25,8 @@
     text-rendering: optimizeLegibility;
     transition: all 0.4s ease-in;
     width: auto;
+    -webkit-appearance: none;
+
     @media (max-width: $s-screen) {
         width: 100%;
         display: block;

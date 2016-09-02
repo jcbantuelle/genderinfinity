@@ -16,11 +16,20 @@
         flex: auto;
         justify-content: flex-start;
         padding: 10px $base-cushion 0 $base-cushion;
+        width: 100%;
 
         // Large Screen
         // -------------------------
         @media only screen and (min-width: $s-screen) {
             flex: 1 1 25%;
+            width: 25%;
+        }
+
+        // Medium Screen
+        // -------------------------
+        @media only screen and (min-width: $m-screen) {
+            flex: 1 1 33%;
+            width: 33.3%;
         }
     }
 }
@@ -34,7 +43,7 @@
 
     // Large Screen
     // -------------------------
-    @media only screen and (min-width: $s-screen) {
+    @media only screen and (min-width: $m-screen) {
         display: flex;
         justify-content: center;
     }

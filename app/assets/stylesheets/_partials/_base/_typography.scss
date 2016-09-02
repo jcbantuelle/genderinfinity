@@ -38,7 +38,7 @@ $base-font-size: (              // html, body, p
 // Heading Font Sizes
 // -------------------------
 $h2-font-size: (
-    null: (1.125em, 1.2),       // 18px
+    null: (1.250em, 1.2),       // 20px
     large: (1.500em, 1.4)       // 24px
 );
 
@@ -144,7 +144,7 @@ h2 {
     @include font-size($h2-font-size);
     font-family: $baseFontFamily;
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     opacity: 0.8;
 
     &.alt {

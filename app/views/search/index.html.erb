@@ -16,6 +16,9 @@
         <div class="wrapper">
           <div class="primary-info">
             <span class="location"><h3><%= location.name %></h3></span>
+            <span class="directions"><a class="btn" target="_blank" href="http://www.google.com/maps?saddr=<%= @search_form.address %>&amp;daddr=<%= location.address %>">Directions<em class="icon-circle-right"></em></a></span>
+          </div>
+          <div class="secondary-info">
             <ul>
                 <li class="address"><%= location.address %></li>
                 <li class="distance"><%= location.distance.round(2) %> Miles Away</li>
@@ -26,20 +29,17 @@
                   <li class="website"><%= auto_link(location.contact) %></li>
                 <% end %>
             </ul>
-            <span class="directions"><a class="btn" target="_blank" href="http://www.google.com/maps?saddr=<%= @search_form.address %>&amp;daddr=<%= location.address %>">Directions<em class="icon-circle-right"></em></a></span>
+            <hr>
+            <p class="about"><%= auto_link(location.notes) %></p>
           </div>
-          <div class="secondary-info">
-            <% if location.notes.present? %>
-              <p class="about"><%= auto_link(location.notes) %></p>
-              <hr>
-            <% end %>
-            <div class="results-tags">
-              <span class="icon-tag"></span>
-              <% location.specialties.each do |specialty| %>
-                <span class="tag"><%= specialty.name %></span>
-              <% end %>
+          <div class="results-tags clear">
+              <p>
+                  <span class="icon-tag"></span>
+                  <% location.specialties.each do |specialty| %>
+                    <span class="tag"><%= specialty.name %></span>
+                  <% end %>
+              </p>
             </div>
-          </div>
         </div>
       <% end %>
     </div>

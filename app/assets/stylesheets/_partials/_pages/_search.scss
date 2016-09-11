@@ -150,14 +150,8 @@
             }
 
             &:nth-child(even) {
-                background: darken($lightGray, 3%);
+                background: darken($lightGray, 4%);
             }
-        }
-
-        .tag {
-            display: inline-block;
-            font-weight: 400;
-            line-height: 0.5;
         }
 
         // Left Column
@@ -170,46 +164,13 @@
             @media only screen and (min-width: $s-screen) {
                 float: left;
                 margin-right: 5%;
-                width: 35%;
-            }
-
-            ul {
-                margin-bottom: $base-cushion;
-                padding-left: 0;
-            }
-
-            li {
-                list-style: none;
-                margin-left: 20px;
-                padding-left: 8px;
-                position: relative;
+                width: 28%;
             }
         }
 
         .location {
             position: relative;
         }
-
-        // Icons (shared styles)
-        // -------------------------
-        .address, .phone, .website, .distance {
-            margin-bottom: 5px;
-
-            &:before {
-                color: darken($secondaryColor, 10%);
-                font-family: 'icomoon';
-                position: absolute;
-                left: -21px;
-                top: 2px;
-            }
-        }
-
-        // Icons (custom styles)
-        // -------------------------
-        .address:before     { content: "\e901"; }
-        .phone:before       { content: "\e900"; }
-        .website:before     { content: "\e902"; }
-        .distance:before    { content: "\e908"; }
 
         // Directions Button
         // -------------------------
@@ -239,7 +200,20 @@
             // -------------------------
             @media only screen and (min-width: $s-screen) {
                 float: left;
-                width: 60%;
+                width: 67%;
+            }
+
+            ul {
+                margin-bottom: $base-cushion;
+                margin-top: 10px;
+                padding-left: 0;
+            }
+
+            li {
+                list-style: none;
+                margin-left: 20px;
+                padding-left: 8px;
+                position: relative;
             }
 
             p {
@@ -250,5 +224,26 @@
                 }
             }
         }
+
+        // Icons (shared styles)
+        // -------------------------
+        .address, .phone, .website, .distance {
+            margin-bottom: 5px;
+
+            &:before {
+                color: darken($secondaryColor, 10%);
+                font-family: 'icomoon';
+                position: absolute;
+                left: -21px;
+                top: 2px;
+            }
+        }
+
+        // Icons (custom styles)
+        // -------------------------
+        .address:before     { content: "\e901"; }
+        .phone:before       { content: "\e900"; }
+        .website:before     { content: "\e902"; }
+        .distance:before    { content: "\e908"; }
     }
 }

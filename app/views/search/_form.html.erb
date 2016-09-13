@@ -60,19 +60,3 @@
         </div>
     </section>
 <% end %>
-
-<script type="text/javascript">
-    $('.service-link').click(function() {
-        $('.service-link').removeClass('active')
-        $(this).addClass('active')
-        var service_text = $(this).text()
-        var service_id = $(this).attr('data-service-value')
-        $('#specialty-filter-service-name').text(service_text)
-        $('#search_form_service').val(service_id)
-        $('#specialties').slideUp()
-        $.get('<%= specialties_path %>', {service_id: service_id}, function(specialties) {
-            $('#specialties').html(specialties).slideDown()
-            $('.menu').slideDown()
-        })
-    })
-</script>

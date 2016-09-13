@@ -9,6 +9,6 @@ $ ->
     service_text = $(this).text()
     service_id = $(this).attr('data-service-value')
     $('#specialty-filter-service-name').text(service_text)
-    $('#location_form_service').val(service_id)
+    $('#services input').val(service_id)
     $('#specialties').slideUp()
     $.get('/specialties', {service_id: service_id}, load_specialties)

@@ -1,0 +1,84 @@
+<% if @location_form.errors.count > 0 %>
+  <div class="error column-wrap">
+      <div class="column">
+          <span class="icon-warning-outline"></span>
+          <p>There were errors in your submission. Please correct them and try again.</p>
+      </div>
+      <div class="column">
+          <ul>
+            <% @location_form.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+      </div>
+  </div>
+<% end %>
+<%= form_for @location_form, url: locations_path, method: :post do |f| %>
+    <section class="primary-content">
+        <div class="wrapper">
+            <!-- Location Form -->
+            <div class="form-group">
+                <span>
+                    <%= f.text_field :name, placeholder: 'Enter Location Name', tabindex: 5 %>
+                </span>
+                <span>
+                    <%= f.text_field :address, placeholder: 'Enter Address', tabindex: 10 %>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <span>
+                    <%= f.text_field :phone, placeholder: 'Enter Phone Number', tabindex: 15 %>
+                </span>
+                <span>
+                    <%= f.text_field :fax, placeholder: 'Enter Fax Number', tabindex: 20 %>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <span>
+                    <%= f.text_field :email, placeholder: 'Enter Email', tabindex: 25 %>
+                </span>
+                <span>
+                    <%= f.text_field :website, placeholder: 'Enter Website', tabindex: 30 %>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <span>
+                    <%= f.text_area :notes, placeholder: 'Enter Description of Provider', tabindex: 35 %>
+                </span>
+            </div>
+
+            <!-- General Topics -->
+            <h2 class="alt"><span>Choose a Service</span></h2>
+            <div id="services" class="general-topic">
+                <% @services.each do |service| %>
+                    <span class="service-link <%= 'active' if service.id.to_s == @location_form.service %>" data-service-value="<%= service.id %>" href="#"><%= service.name %></span>
+                <% end %>
+                <%= f.hidden_field :service %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specific Specialties -->
+    <section class="specific-specialty">
+        <div class="menu" style="<%= 'display:none;' unless @service %>">
+            <div class="arrow-wrap">
+                <div class="arrow" type="button">
+                    <span class="arrow-hand top"></span>
+                    <span class="arrow-hand bottom"></span>
+                </div>
+            </div>
+            <div class="wrapper">
+                <h2>Find a specialty for <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
+                <div id="specialties" class="column-wrap">
+                    <%= render partial: 'specialties/specialties' if @service %>
+                </div>
+                <span class="search">
+                    <%= submit_tag 'Submit', class: 'btn', tabindex: 40 %>
+                </span>
+            </div>
+        </div>
+    </section>
+<% end %>

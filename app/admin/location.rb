@@ -1,16 +1,18 @@
 ActiveAdmin.register Location do
-  permit_params :name, :phone, :contact, :address, :notes, :confirmed_by_gi, specialty_ids: []
+  permit_params :name, :phone, :fax, :email, :website, :address, :notes, :confirmed_by_gi, specialty_ids: []
 
   index do
     selectable_column
     column :name
+    column :address
+    column :phone
+    column :fax
+    column :email
+    column :website
+    column :notes
     column "Specialties" do |location|
       location.specialty_names.join(', ')
     end
-    column :phone
-    column :contact
-    column :address
-    column :notes
     actions
   end
 
@@ -18,12 +20,13 @@ ActiveAdmin.register Location do
     fieldset class: 'inputs' do
       ol do
         f.input :name
-        f.input :phone
-        f.input :contact
         f.input :address
+        f.input :phone
+        f.input :fax
+        f.input :email
+        f.input :website
         f.input :notes
         f.input :specialties, as: :check_boxes, collection: Specialty.all
-        f.input :confirmed_by_gi, as: :boolean, label: 'Confirmed By GI?'
       end
     end
     f.actions
@@ -32,34 +35,16 @@ ActiveAdmin.register Location do
   show do
     attributes_table do
       row(:name)
+      row(:address)
+      row(:phone)
+      row(:fax)
+      row(:email)
+      row(:website)
+      row(:notes)
       row(:specialties) do |location|
         location.specialty_names.join(', ')
       end
-      row(:phone)
-      row(:contact)
-      row(:address)
-      row(:notes)
-      row(:confirmed_by_gi)
     end
   end
 
-  action_item :upload_csv do
-    link_to 'Upload CSV', upload_csv_admin_locations_path
-  end
-
-  collection_action :upload_csv, method: :get do
-  end
-
-  collection_action :import_csv, method: :post do
-    if params[:location_csv]
-      if LocationImporter.new(params[:location_csv]).import
-        return redirect_to collection_path, notice: 'Locations imported successfully!'
-      else
-        flash[:warning] = 'File failed to load'
-      end
-    else
-      flash[:warning] = 'No file was uploaded'
-    end
-    render :upload_csv
-  end
 end

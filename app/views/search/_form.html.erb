@@ -51,7 +51,7 @@
             <div class="wrapper">
                 <h2>Find a specialty for <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
                 <div id="specialties" class="column-wrap">
-                    <%= render partial: 'specialties' if @service %>
+                    <%= render partial: 'specialties/specialties' if @service %>
                 </div>
                 <span class="search">
                     <%= submit_tag 'Search', class: 'btn', tabindex: 15 %>
@@ -70,7 +70,7 @@
         $('#specialty-filter-service-name').text(service_text)
         $('#search_form_service').val(service_id)
         $('#specialties').slideUp()
-        $.post('/search/specialties', {service_id: service_id}, function(specialties) {
+        $.get('<%= specialties_path %>', {service_id: service_id}, function(specialties) {
             $('#specialties').html(specialties).slideDown()
             $('.menu').slideDown()
         })

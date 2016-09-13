@@ -19,8 +19,4 @@ class SearchController < ApplicationController
     @search_form = SearchForm.new(params)
   end
 
-  def specialties
-    @service = Service.find(params[:service_id])
-    render partial: 'specialties'
-  end
 end

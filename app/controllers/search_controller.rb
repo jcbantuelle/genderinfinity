@@ -1,7 +1,6 @@
 class SearchController < ApplicationController
 
   def index
-    @specialties = Specialty.all
     @services = Service.all
     @search_form = SearchForm.new(params[:search_form])
     @service = Service.find(@search_form.service) if @search_form.service
@@ -14,7 +13,6 @@ class SearchController < ApplicationController
   end
 
   def new
-    @specialties = Specialty.all
     @services = Service.all
     @search_form = SearchForm.new(params)
   end

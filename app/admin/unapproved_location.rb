@@ -1,9 +1,20 @@
-ActiveAdmin.register Location do
+ActiveAdmin.register Location, as: 'Unapproved Location' do
+
+  menu label: 'Unapproved Locations'
 
   controller do
     def scoped_collection
-      end_of_association_chain.approved
+      end_of_association_chain.unapproved
     end
+  end
+
+  member_action :approve, method: :get do
+    resource.update!(approved: true)
+    redirect_to admin_unapproved_locations_path
+  end
+
+  action_item only: :show do
+    link_to 'Approve', approve_admin_unapproved_location_path(unapproved_location)
   end
 
   permit_params :name, :phone, :fax, :email, :website, :address, :notes, specialty_ids: []
@@ -20,7 +31,9 @@ ActiveAdmin.register Location do
     column "Specialties" do |location|
       location.specialty_names.join(', ')
     end
-    actions
+    actions defaults: true do |unapproved_location|
+      link_to 'Approve', approve_admin_unapproved_location_path(unapproved_location)
+    end
   end
 
   form do |f|

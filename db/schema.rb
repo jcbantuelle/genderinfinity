@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160913150537) do
     t.boolean  "confirmed_by_gi", default: false, null: false
     t.string   "fax"
     t.string   "email"
-    t.boolean  "approved"
+    t.boolean  "approved",        default: true
   end
 
   create_table "locations_specialties", id: false, force: :cascade do |t|

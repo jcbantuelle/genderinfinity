@@ -3,6 +3,6 @@ class UpdateLocationFields < ActiveRecord::Migration
     rename_column :locations, :contact, :website
     add_column :locations, :fax, :string
     add_column :locations, :email, :string
-    add_column :locations, :approved, :boolean
+    add_column :locations, :approved, :boolean, default: true
   end
 end

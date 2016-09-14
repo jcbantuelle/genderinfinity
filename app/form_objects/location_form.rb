@@ -2,7 +2,7 @@ class LocationForm
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :name, :address, :phone, :fax, :email, :website, :notes, :specialties, :service
+  attr_accessor :name, :address, :phone, :fax, :email, :website, :notes, :specialties, :service, :location
 
   validates :name, presence: true
   validates :address, presence: true

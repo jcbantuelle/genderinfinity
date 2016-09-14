@@ -14,6 +14,7 @@
   </div>
 <% end %>
 <%= form_for @location_form, url: locations_path, method: :post do |f| %>
+    <input type="hidden" id="form-type" value="location_form" />
     <section class="primary-content">
         <div class="wrapper">
             <!-- Location Form -->
@@ -73,7 +74,7 @@
             <div class="wrapper">
                 <h2>Find a specialty for <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
                 <div id="specialties" class="column-wrap">
-                    <%= render partial: 'specialties/specialties' if @service %>
+                    <%= render partial: 'specialties/specialties', locals: {form_type: 'location_form', selected_specialties: @location_form.specialties} if @service %>
                 </div>
                 <span class="search">
                     <%= submit_tag 'Submit', class: 'btn', tabindex: 40 %>

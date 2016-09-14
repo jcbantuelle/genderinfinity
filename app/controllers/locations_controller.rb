@@ -8,6 +8,7 @@ class LocationsController < ApplicationController
   def create
     @services = Service.all
     @location_form = LocationForm.new(params[:location_form])
+    @service = Service.find(@location_form.service) if @location_form.service
     if @location_form.save
       redirect_to action: 'thank_you'
     else

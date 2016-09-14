@@ -35,8 +35,10 @@
                   <li class="website"><%= auto_link(location.website) %></li>
                 <% end %>
             </ul>
-            <hr>
-            <p class="about"><%= auto_link(location.notes) %></p>
+            <% if location.notes.present? %>
+              <hr>
+              <p class="about"><%= auto_link(location.notes) %></p>
+            <% end %>
           </div>
           <div class="results-tags clear">
               <p>

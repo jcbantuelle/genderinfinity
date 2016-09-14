@@ -42,5 +42,11 @@ Rails.application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { host: 'mailcatcher', port: 1080 }
+  config.action_mailer.default_url_options = { host: '0.0.0.0', port: 3000 }
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'mailcatcher',
+    :port           => '1025',
+    :authentication => :plain
+  }
 end

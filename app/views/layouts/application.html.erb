@@ -33,7 +33,7 @@
             <%= yield %>
         </div>
         <%= render partial: 'footers/internal' unless current_page?(root_url) || (params[:controller] == 'locations' && %w(new create).include?(params[:action])) %>
-        <footer class="wrapper">
+        <footer>
                 <p class="text-muted"></p>
                 <!-- Copyright -->
                 <div class="copyright">

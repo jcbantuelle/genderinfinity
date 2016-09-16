@@ -5,8 +5,16 @@
 // Sectionals
 // --------------------------------------------------
 
+// Large Screen
+// -------------------------
+@media only screen and (min-width: $s-screen) {
+    #content {
+        margin-top: 54px;
+    }
+}
+
 aside { // Only for callouts
-    padding: 60px 30px 80px 30px;
+    padding: 60px 30px 100px 30px;
     text-align: center;
 
     h1, h2 {

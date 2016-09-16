@@ -8,6 +8,16 @@ header {
     padding: 10px 15px;
     text-align: center;
 
+    // Large Screen
+    // -------------------------
+    @media only screen and (min-width: $s-screen) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
     a,
     a:hover {
         color: white;

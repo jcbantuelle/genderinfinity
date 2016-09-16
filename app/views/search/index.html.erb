@@ -26,10 +26,10 @@
                   <li class="phone"><a href="tel:<%= location.phone %>"><%= location.phone %></a></li>
                 <% end %>
                 <% if (location.fax.present?) %>
-                  <li class="fax">Fax: <%= location.fax %></li>
+                  <li class="fax"><%= location.fax %></li>
                 <% end %>
                 <% if (location.email.present?) %>
-                  <li class="email">Email: <a href="mailto:<%= location.email %>"><%= location.email %></a></li>
+                  <li class="email"><a href="mailto:<%= location.email %>"><%= location.email %></a></li>
                 <% end %>
                 <% if (location.website.present?) %>
                   <li class="website"><%= auto_link(location.website) %></li>

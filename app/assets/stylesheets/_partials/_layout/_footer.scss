@@ -5,16 +5,21 @@
 footer {
     font-size: 0.813em;
     font-weight: 300;
-    opacity: 0.8;
+    padding: 0 30px 20px 30px;
     width: 100%;
 
     // Large Screen
     // -------------------------
     @media only screen and (min-width: $s-screen) {
+        background: $quaternaryColor;
         position: fixed;
-        bottom: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
 
         .copyright {
+            opacity: 0.8;
             text-align: center;
         }
 

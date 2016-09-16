@@ -90,7 +90,7 @@
     @include box-shadow-inverted;
     background-color: $secondaryColor;
     display: block;
-    padding: $base-cushion;
+    padding: $base-cushion $base-cushion 100px $base-cushion;
     width: 100%;
 }
 

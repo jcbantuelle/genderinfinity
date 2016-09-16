@@ -31,8 +31,8 @@ $breakpoints: (
 // Base Font Size
 // -------------------------
 $base-font-size: (              // html, body, p
-    null: (0.938rem, 1.4),      // 15px
-    large: (1.125rem, 1.5)      // 16px
+    null: (0.938rem, 1.3),      // 15px
+    large: (1.125rem, 1.4)      // 16px
 );
 
 // Heading Font Sizes
@@ -43,8 +43,8 @@ $h2-font-size: (
 );
 
 $h3-font-size: (
-    null: (1.313em, 1.4),       // 21px
-    large: (1.500em, 1.6)       // 24px
+    null: (1.313em, 1.2),       // 21px
+    large: (1.500em, 1.3)       // 24px
 );
 
 
@@ -64,12 +64,6 @@ $nameoficon2-font-size: (
 
 // Form Font Sizes
 // -------------------------
-$label-font-size: (
-    null: (0.000em, 1.4),       // 00px
-    medium: (0.000em, 1.5),     // 00px
-    large: (0.000em, 1.6)       // 00px
-);
-
 $input-font-size: (
     null: (1.000em, 1.2),       // 16px
     large: (1.250em, 1.4)       // 20px

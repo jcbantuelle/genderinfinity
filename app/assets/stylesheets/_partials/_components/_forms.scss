@@ -53,7 +53,11 @@ label {
 
 // Inputs
 // --------------------------------------------------
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
     @include font-size($input-font-size);
     background: white;
     border: 2px solid $secondaryColor;
@@ -71,6 +75,16 @@ input[type="text"] {
         color: $tertiaryColor;
         outline: none;
     }
+}
+
+textarea {
+    width: 100%;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="url"] {
+    text-transform: none;
 }
 
 // Checkbox
@@ -142,11 +156,13 @@ input[type="checkbox"] {
 
 // Error Validation
 // --------------------------------------------------
+// Error Validation
+// --------------------------------------------------
 .error {
     background: $warning;
     @include box-shadow-inverted;
     color: white;
-    opacity: 0.9;
+    opacity: 0.8;
     padding: 15px 5%;
     position: relative;
     z-index: 999;
@@ -175,7 +191,7 @@ input[type="checkbox"] {
         // Large Screen
         // -------------------------
         @media only screen and (min-width: $m-screen) {
-            width: 100%;
+            width: 50%;
         }
     }
 

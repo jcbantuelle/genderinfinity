@@ -156,6 +156,7 @@
                 @include font-size($secondary-button-font-size);
                 border-color: $quaternaryColor;
                 color: $quaternaryColor;
+                margin-top: 15px;
                 padding: 10px 15px;
 
                 &:hover {
@@ -200,6 +201,10 @@
                     margin-top: 0;
                 }
             }
+
+            .about {
+                font-style: italic;
+            }
         }
 
         // Icons (shared styles)
@@ -222,5 +227,7 @@
         .phone:before       { content: "\e900"; }
         .website:before     { content: "\e902"; }
         .distance:before    { content: "\e908"; }
+        .email:before       { content: "\e90a"; }
+        .fax:before         { content: "\e90b"; }
     }
 }

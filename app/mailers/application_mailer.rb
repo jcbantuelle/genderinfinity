@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "admin@genderinfinity.org"
+  default from: "info@genderinfinity.org"
   layout 'mailer'
 end

@@ -8,22 +8,38 @@
 .column-wrap {
     overflow: hidden;
 
-    .column { // 4 columns max
-        padding: 10px $base-cushion 0 $base-cushion;
+    span { width: 100%; }
+
+    .column,
+    .column-half,
+    .column-full { // shared styles
         width: 100%;
 
         // Large Screen
         // -------------------------
-        @media only screen and (min-width: $l-screen) {
+        @media only screen and (min-width: $m-screen) {
             float: left;
+        }
+    }
+
+    .column { // 4 columns max
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $m-screen) {
             width: 25%;
         }
 
         // Medium Screen
         // -------------------------
         @media only screen and (min-width: $m-screen) and (max-width: $l-screen) {
-            float: left;
             width: 33.3%;
+        }
+    }
+    .column-half { // 2 columns max
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $m-screen) {
+            width: 50%;
         }
     }
 }

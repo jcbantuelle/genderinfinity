@@ -7,12 +7,10 @@ class LocationSearcher
     @search_radius = search_form.search_radius
     @specialties = search_form.specialties
     @service = search_form.service
-    # @confirmed_by_gi = search_form.confirmed_by_gi
   end
 
   def search
-    locations = Location.near(@address_coordinates, @search_radius)
-    # locations = locations.confirmed_by_gi if @confirmed_by_gi
+    locations = Location.near(@address_coordinates, @search_radius).approved
     locations = locations.to_a
     if (@specialties.empty?)
       locations = filter_by_service(locations)

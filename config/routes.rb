@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   get '/404', to: 'errors#not_found'
 
-  resources :search do
+  resources :search
+  resources :locations do
     collection do
-      post 'specialties'
+      get :thank_you
     end
   end
-
-  resources :locations
+  resources :specialties
 end

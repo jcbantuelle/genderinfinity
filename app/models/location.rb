@@ -7,7 +7,8 @@ class Location < ActiveRecord::Base
   def self.default_scope
     includes(:specialties)
   end
-  scope :confirmed_by_gi, -> { where(confirmed_by_gi: true) }
+  scope :approved, -> { where(approved: true) }
+  scope :unapproved, -> { where(approved: false) }
 
   geocoded_by :address
   after_validation :geocode, if: ->(location) { location.address.present? and location.address_changed? }

@@ -2,6 +2,48 @@
 // Form Styles
 // --------------------------------------------------------------------------
 
+// Containers
+// --------------------------------------------------
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+    z-index: 100 !important;
+
+    span {
+        display: inline-block;
+        position: relative;
+
+        input {
+            padding-left: 40px;
+            width: 100%;
+
+            &:focus + em[class^="icon-"],
+            &:focus + em[class*=" icon-"] {
+                color: $tertiaryColor;
+            }
+        }
+
+        em[class^="icon-"],
+        em[class*=" icon-"] {
+            color: $secondaryColor;
+            font-style: normal;
+            position: absolute;
+            left: 15px;
+            top: 35%;
+            z-index: 101;
+        }
+    }
+
+    // Large Screen
+    // -------------------------
+    @media only screen and (min-width: $m-screen) {
+        margin: 0 0 40px 0;
+
+        span { margin-bottom: 0; }
+    }
+}
+
 // Labels
 // --------------------------------------------------
 label {
@@ -11,7 +53,11 @@ label {
 
 // Inputs
 // --------------------------------------------------
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
     @include font-size($input-font-size);
     background: white;
     border: 2px solid $secondaryColor;
@@ -29,6 +75,16 @@ input[type="text"] {
         color: $tertiaryColor;
         outline: none;
     }
+}
+
+textarea {
+    width: 100%;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="url"] {
+    text-transform: none;
 }
 
 // Checkbox
@@ -100,11 +156,13 @@ input[type="checkbox"] {
 
 // Error Validation
 // --------------------------------------------------
+// Error Validation
+// --------------------------------------------------
 .error {
     background: $warning;
     @include box-shadow-inverted;
     color: white;
-    opacity: 0.9;
+    opacity: 0.8;
     padding: 15px 5%;
     position: relative;
     z-index: 999;
@@ -133,7 +191,7 @@ input[type="checkbox"] {
         // Large Screen
         // -------------------------
         @media only screen and (min-width: $m-screen) {
-            width: 100%;
+            width: 50%;
         }
     }
 
@@ -148,24 +206,53 @@ input[type="checkbox"] {
             float: left;
             font-size: 50px;
             margin-right: 20px;
-            margin-top: -15px;
+            margin-top: 0;
+            width: 50px;
         }
     }
 
     p {
         font-size: 20px;
-        margin-top: 0;
+        margin-top: 10px;
+        padding-right: 20px;
         text-align: left !important;
     }
 
     ul {
-        font-size: 15px;
         margin: 0;
-        opacity: 0.9;
+        opacity: 0.8;
         padding: 0 0 0 8%;
+
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $m-screen) {
+            border-left: 2px solid white;
+        }
     }
 }
 
 .field_with_errors input {
-    border-color: $warning;
+    background-color: #f7e6eb;
+}
+
+// Thank You Confirmation
+// --------------------------------------------------
+.primary-content.confirmation {
+    @include box-shadow-inverted;
+    background-color: $secondaryColor;
+    font-weight: 400;
+    text-align: center;
+
+    h2 {
+        color: white;
+        font-family: $displayFontFamily;
+        margin: 0;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+        font-size: 3.125em;
+        margin-right: 20px;
+        vertical-align: -25px;
+    }
 }

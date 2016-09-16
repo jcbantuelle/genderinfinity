@@ -25,6 +25,7 @@
 @import "_partials/_layout/_layout";             // HTML / Body
 @import "_partials/_layout/_header";             // Header Layout Partial
 @import "_partials/_layout/_content-area";       // Content Area Layout Partial
+@import "_partials/_layout/_footer";             // Footer Layout Partial
 
 
 // Component Styles
@@ -37,3 +38,4 @@
 // -----------------------------------------------
 @import "_partials/_pages/intro";               // Welcome Page
 @import "_partials/_pages/search";              // Search Page and Results Styles
+@import "_partials/_pages/contribute";          // Contribute Page Styles

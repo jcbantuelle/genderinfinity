@@ -2,7 +2,7 @@
 // Pages: Search (Modifiers)
 // --------------------------------------------------------------------------
 
-#search-page {
+.search-container {
 
     // Map
     // --------------------------------------------------
@@ -21,39 +21,8 @@
     // Form
     // --------------------------------------------------
     .form-group {
-        margin: 0 0 40px 0;
-        position: relative;
-        width: 100%;
-        z-index: 100 !important;
-
-        span {
-            display: inline-block;
-            position: relative;
-
-            input {
-                padding-left: 40px;
-                width: 100%;
-
-                &:focus + em[class^="icon-"],
-                &:focus + em[class*=" icon-"] {
-                    color: $tertiaryColor;
-                }
-            }
-
-            em[class^="icon-"],
-            em[class*=" icon-"] {
-                color: $secondaryColor;
-                font-style: normal;
-                position: absolute;
-                left: 15px;
-                top: 35%;
-                z-index: 101;
-            }
-        }
-
         .location-address,
         .mile-radius {
-            margin-bottom: 15px;
             width: 100%;
         }
 
@@ -111,6 +80,14 @@
                 &:active {
                     background: darken($secondaryColor, 15%);
                 }
+            }
+        }
+
+        // Columns
+        // -------------------------
+        .column-wrap {
+            .column { // 4 columns max
+                padding: 10px 10px 0 10px;
             }
         }
     }
@@ -179,6 +156,7 @@
                 @include font-size($secondary-button-font-size);
                 border-color: $quaternaryColor;
                 color: $quaternaryColor;
+                margin-top: 15px;
                 padding: 10px 15px;
 
                 &:hover {
@@ -223,11 +201,15 @@
                     margin-top: 0;
                 }
             }
+
+            .about {
+                font-style: italic;
+            }
         }
 
         // Icons (shared styles)
         // -------------------------
-        .address, .phone, .website, .distance {
+        .address, .phone, .website, .distance, .email, .fax {
             margin-bottom: 5px;
 
             &:before {
@@ -245,5 +227,7 @@
         .phone:before       { content: "\e900"; }
         .website:before     { content: "\e902"; }
         .distance:before    { content: "\e908"; }
+        .email:before       { content: "\e90a"; }
+        .fax:before         { content: "\e90b"; }
     }
 }

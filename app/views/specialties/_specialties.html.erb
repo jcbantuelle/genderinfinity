@@ -1,0 +1,10 @@
+<% @service.specialties.each do |specialty| %>
+    <div class="column">
+        <div class="checkbox-wrap">
+            <label class="control" for="<%= form_type %>-specialties-<%= specialty.id %>"><%= specialty.name %>
+                <input type="checkbox" id="<%= form_type %>-specialties-<%= specialty.id %>" name="<%= form_type %>[specialties][]" value="<%= specialty.id %>" <%= 'checked="checked"' if selected_specialties && selected_specialties.include?(specialty.id) %> />
+                <div class="indicator"></div>
+            </label>
+        </div>
+    </div>
+<% end %>

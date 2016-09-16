@@ -14,6 +14,7 @@
   </div>
 <% end %>
 <%= form_for @search_form, {url: search_index_path, method: :get} do |f| %>
+    <input type="hidden" id="form-type" value="search_form" />
     <section class="primary-content">
         <div class="wrapper">
             <!-- Search Form -->
@@ -51,7 +52,7 @@
             <div class="wrapper">
                 <h2>Find a specialty for <strong id="specialty-filter-service-name"><%= @service.name if @service %></strong></h2>
                 <div id="specialties" class="column-wrap">
-                    <%= render partial: 'specialties' if @service %>
+                    <%= render partial: 'specialties/specialties', locals: {form_type: 'search_form', selected_specialties: @search_form.specialties} if @service %>
                 </div>
                 <span class="search">
                     <%= submit_tag 'Search', class: 'btn', tabindex: 15 %>
@@ -60,19 +61,3 @@
         </div>
     </section>
 <% end %>
-
-<script type="text/javascript">
-    $('.service-link').click(function() {
-        $('.service-link').removeClass('active')
-        $(this).addClass('active')
-        var service_text = $(this).text()
-        var service_id = $(this).attr('data-service-value')
-        $('#specialty-filter-service-name').text(service_text)
-        $('#search_form_service').val(service_id)
-        $('#specialties').slideUp()
-        $.post('/search/specialties', {service_id: service_id}, function(specialties) {
-            $('#specialties').html(specialties).slideDown()
-            $('.menu').slideDown()
-        })
-    })
-</script>

@@ -17,38 +17,81 @@
     <input type="hidden" id="form-type" value="location_form" />
     <section class="primary-content">
         <div class="wrapper">
+            <h2 class="alt"><span>Contribute by Completing the Form</span></h2>
+
             <!-- Location Form -->
-            <div class="form-group">
-                <span>
-                    <%= f.text_field :name, placeholder: 'Enter Location Name', tabindex: 5 %>
-                </span>
-                <span>
-                    <%= f.text_field :address, placeholder: 'Enter Address', tabindex: 10 %>
-                </span>
-            </div>
+            <div class="column-wrap">
 
-            <div class="form-group">
-                <span>
-                    <%= f.text_field :phone, placeholder: 'Enter Phone Number', tabindex: 15 %>
-                </span>
-                <span>
-                    <%= f.text_field :fax, placeholder: 'Enter Fax Number', tabindex: 20 %>
-                </span>
-            </div>
+                <!-- Location Name -->
+                <div class="column-full">
+                    <div class="form-group">
+                        <span>
+                            <%= f.text_field :name, placeholder: 'Enter Location Name', tabindex: 5 %>
+                            <em class="icon-name"></em>
+                        </span>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <span>
-                    <%= f.text_field :email, placeholder: 'Enter Email', tabindex: 25 %>
-                </span>
-                <span>
-                    <%= f.text_field :website, placeholder: 'Enter Website', tabindex: 30 %>
-                </span>
-            </div>
+                <div class="column-half">
+                    <!-- Address -->
+                    <div class="column-full">
+                        <div class="form-group">
+                            <span>
+                                <%= f.text_field :address, placeholder: 'Enter Address', tabindex: 10 %>
+                                <em class="icon-location"></em>
+                            </span>
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <span>
-                    <%= f.text_area :notes, placeholder: 'Enter Description of Provider', tabindex: 35 %>
-                </span>
+                    <!-- Phone Number -->
+                    <div class="column-half">
+                        <div class="form-group">
+                            <span>
+                                <%= f.telephone_field :phone, placeholder: 'Enter Phone Number', tabindex: 15 %>
+                                <em class="icon-mobile"></em>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Fax Number -->
+                    <div class="column-half">
+                        <div class="form-group">
+                            <span>
+                                <%= f.telephone_field :fax, placeholder: 'Enter Fax Number', tabindex: 20 %>
+                                <em class="icon-print"></em>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="column-half">
+                        <div class="form-group">
+                            <span>
+                                <%= f.email_field :email, placeholder: 'Enter Email', tabindex: 25 %>
+                                <em class="icon-email"></em>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Website -->
+                    <div class="column-half">
+                        <div class="form-group">
+                            <span>
+                                <%= f.url_field :website, placeholder: 'Enter Website', tabindex: 30 %>
+                                <em class="icon-link"></em>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="column-half">
+                    <div class="form-group">
+                        <span>
+                            <%= f.text_area :notes, placeholder: 'Enter Description of Provider', tabindex: 35 %>
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- General Topics -->

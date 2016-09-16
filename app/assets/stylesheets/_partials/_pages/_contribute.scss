@@ -1,0 +1,54 @@
+// --------------------------------------------------------------------------
+// Pages: Contribute (Modifiers)
+// --------------------------------------------------------------------------
+
+.search-container {
+    .new_location_form {
+        .primary-content .column-wrap {
+        // Large Screen
+        // -------------------------
+        @media only screen and (min-width: $m-screen) {
+                padding: 2% 7%;
+            }
+        }
+
+        // Containers
+        // --------------------------------------------------
+        .form-group {
+
+            // Large Screen
+            // -------------------------
+            @media only screen and (min-width: $m-screen) {
+                margin: -2px 0 0 0;
+
+                #location_form_fax,
+                #location_form_website,
+                #location_form_notes {
+                    margin-left: -2px;
+                }
+
+                #location_form_fax,
+                #location_form_website {
+                    width: 101%;
+                }
+
+                #location_form_name {
+                    width: 99.8%;
+                }
+
+                #location_form_notes {
+                    @include font-size($base-font-size);
+                    min-height: 182px;
+                }
+            }
+
+            // Large Screen
+            // -------------------------
+            @media only screen and (max-width: $l-screen) and (min-width: $m-screen) {
+                #location_form_notes {
+                    min-height: 116px;
+                }
+            }
+        }
+    }
+}

@@ -33,10 +33,21 @@
             <%= yield %>
         </div>
         <%= render partial: 'footers/internal' unless current_page?(root_url) || (params[:controller] == 'locations' && %w(new create).include?(params[:action])) %>
-        <footer class="footer">
-            <div class="container">
+        <footer class="wrapper">
                 <p class="text-muted"></p>
-            </div>
+                <!-- Copyright -->
+                <div class="copyright">
+                    &copy; 2016 Gender Infinity | Resource database maintained by Transgender Health Lab
+                </div>
+                <!-- Logo -->
+                <!--<div class="logo-wrap">
+                    <div class="text">Resource database maintained by</div>
+                    <div id="thl-logo" href="#">
+                    <object data="/thl-logo.svg" type="image/svg+xml">
+                        <img src="/thl-logo.png" alt="Transgender Health Labs">
+                    </object>
+                </div>
+            </div>-->
         </footer>
     </div>
 

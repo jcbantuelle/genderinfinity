@@ -1,0 +1,30 @@
+// --------------------------------------------------------------------------
+// Footer
+// --------------------------------------------------------------------------
+
+footer {
+    font-size: 0.813em;
+    font-weight: 300;
+    opacity: 0.8;
+    width: 100%;
+
+    // Large Screen
+    // -------------------------
+    @media only screen and (min-width: $s-screen) {
+        position: fixed;
+        bottom: 20px;
+
+        .copyright {
+            text-align: center;
+        }
+
+        //.logo-wrap {
+        //    display: flex;
+        //    width: 100%;
+
+        //    #thl-logo {
+        //        max-width: 150px;
+        //    }
+        //}
+    }
+}

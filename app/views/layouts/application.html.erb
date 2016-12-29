@@ -32,12 +32,12 @@
         <div id="content">
             <%= yield %>
         </div>
-        <%= render partial: 'footers/internal' unless current_page?(root_url) || (params[:controller] == 'locations' && %w(new create).include?(params[:action])) %>
+        <%= render partial: 'footers/internal' unless current_page?(root_url) || (params[:controller] == 'locations' && %w(new create).include?(params[:action])) || current_page?('/disclaimer') %>
         <footer>
                 <p class="text-muted"></p>
                 <!-- Copyright -->
                 <div class="copyright">
-                    &copy; 2016 Gender Infinity | Resource database maintained by Transgender Health Lab
+                    &copy; 2016 Gender Infinity | Resource database maintained by Transgender Health Lab | <a href="/disclaimer">Disclaimer</a>
                 </div>
                 <!-- Logo -->
                 <!--<div class="logo-wrap">

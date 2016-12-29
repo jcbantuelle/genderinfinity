@@ -10,7 +10,7 @@ services:
             - app
         depends_on:
             - postgres
-        container_name: ruby
+        container_name: genderinfinity
 
     app:
         image: ruby:2.3.1
